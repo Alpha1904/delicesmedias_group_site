@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Partenaires | Delices Medias Group — Nos Partenaires Stratégiques</title>
+  <meta name="description" content="Découvrez les partenaires stratégiques de Delices Medias Group : entreprises, organisations et institutions qui font confiance à notre expertise au Cameroun.">
+  <meta property="og:title" content="Partenaires | Delices Medias Group">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+    .partner-card {
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      transition: all var(--transition);
+      display: flex; flex-direction: column; align-items: center; gap: 1rem;
+    }
+    .partner-card:hover {
+      border-color: rgba(201,168,76,0.4);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-gold);
+    }
+    .partner-logo-wrap {
+      width: 80px; height: 80px;
+      border-radius: var(--radius-sm);
+      background: rgba(255,255,255,0.05);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display); font-size: 1.8rem; font-weight: 700;
+      color: var(--gold);
+      border: 1px solid var(--glass-border);
+    }
+    .partner-card h3 { font-family: var(--font-display); font-size: 1.1rem; }
+    .partner-card .badge { margin-top: 0.3rem; }
+    .partner-card p { font-size: 0.8rem; color: var(--grey-light); line-height: 1.6; }
+
+    .partnership-types {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 5rem;
+    }
+    .partnership-type {
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      text-align: center;
+    }
+    .partnership-type i { font-size: 2rem; color: var(--gold); margin-bottom: 1rem; }
+    .partnership-type h3 { font-family: var(--font-display); font-size: 1.2rem; margin-bottom: 0.5rem; }
+    .partnership-type p { font-size: 0.83rem; color: var(--grey-light); }
+
+    @media (max-width: 768px) { .partnership-types { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<div class="cursor" aria-hidden="true"></div>
+<div class="cursor-follower" aria-hidden="true"></div>
+<div class="progress-bar" aria-hidden="true"></div>
+<header class="nav" role="banner">
+  <a href="index.html" class="nav-logo"><span>Delices</span> Medias<div class="nav-logo-badge">Group</div></a>
+  <nav class="nav-links">
+    <a href="index.html">Accueil</a><a href="about.html">À Propos</a>
+    <a href="services.html">Services</a><a href="events.html">Événements</a>
+    <a href="blog.html">Blog</a><a href="portfolio.html">Portfolio</a>
+    <a href="team.html">Équipe</a><a href="contact.html" class="nav-cta">Contact</a>
+  </nav>
+  <button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</header>
+<div class="fullscreen-menu" role="dialog">
+  <nav>
+    <a href="index.html"><span class="menu-num">01</span> Accueil</a>
+    <a href="about.html"><span class="menu-num">02</span> À Propos</a>
+    <a href="services.html"><span class="menu-num">03</span> Services</a>
+    <a href="events.html"><span class="menu-num">04</span> Événements</a>
+    <a href="blog.html"><span class="menu-num">05</span> Blog</a>
+    <a href="portfolio.html"><span class="menu-num">06</span> Portfolio</a>
+    <a href="team.html"><span class="menu-num">07</span> Équipe</a>
+    <a href="partners.html"><span class="menu-num">08</span> Partenaires</a>
+    <a href="testimonials.html"><span class="menu-num">09</span> Témoignages</a>
+    <a href="contact.html"><span class="menu-num">10</span> Contact</a>
+  </nav>
+  <div class="fullscreen-menu-footer">
+    <a href="https://wa.me/237677685062" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+  </div>
+</div>
+
+<section class="page-header">
+  <div class="page-header-bg"><img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1400&auto=format&fit=crop" alt="" loading="lazy"></div>
+  <div class="page-header-content">
+    <div class="breadcrumb"><a href="index.html">Accueil</a><i class="fa-solid fa-chevron-right"></i> Partenaires</div>
+    <p class="section-label" aria-hidden="true">Ensemble, plus forts</p>
+    <h1 class="section-title">Nos <em>Partenaires</em></h1>
+    <div class="divider"></div>
+    <p class="section-desc">Des alliances stratégiques pour un impact démultiplié au Cameroun et au-delà.</p>
+  </div>
+</section>
+
+<section class="section-pad" role="main" aria-labelledby="partners-heading">
+  <p class="section-label" aria-hidden="true">Notre réseau</p>
+  <h2 class="section-title reveal" id="partners-heading" style="margin-bottom:3rem">Ils font confiance à <em>Delices Medias</em></h2>
+
+  <!-- NOTE : Remplacer les placeholders ci-dessous par les vrais partenaires -->
+  <div class="partners-grid" aria-label="Nos partenaires">
+    <div class="partner-card reveal" data-delay="0.05">
+      <div class="partner-logo-wrap" aria-hidden="true">E</div>
+      <h3>Entreprise Partenaire 1</h3>
+      <span class="badge badge-gold">Corporate</span>
+      <p><!-- REMPLACER : Description partenaire --></p>
+    </div>
+    <div class="partner-card reveal" data-delay="0.1">
+      <div class="partner-logo-wrap" aria-hidden="true">O</div>
+      <h3>Organisation Partenaire 2</h3>
+      <span class="badge badge-blue">ONG</span>
+      <p><!-- REMPLACER : Description partenaire --></p>
+    </div>
+    <div class="partner-card reveal" data-delay="0.15">
+      <div class="partner-logo-wrap" aria-hidden="true">M</div>
+      <h3>Média Partenaire 3</h3>
+      <span class="badge badge-gold">Médias</span>
+      <p><!-- REMPLACER : Description partenaire --></p>
+    </div>
+    <div class="partner-card reveal" data-delay="0.2">
+      <div class="partner-logo-wrap" aria-hidden="true">I</div>
+      <h3>Institution Partenaire 4</h3>
+      <span class="badge badge-blue">Institutionnel</span>
+      <p><!-- REMPLACER : Description partenaire --></p>
+    </div>
+    <div class="partner-card reveal" data-delay="0.25">
+      <div class="partner-logo-wrap" aria-hidden="true">A</div>
+      <h3>Association Partenaire 5</h3>
+      <span class="badge badge-gold">Social</span>
+      <p><!-- REMPLACER : Description partenaire --></p>
+    </div>
+    <div class="partner-card reveal" data-delay="0.3">
+      <div class="partner-logo-wrap" aria-hidden="true">S</div>
+      <h3>Structure Partenaire 6</h3>
+      <span class="badge badge-blue">Développement</span>
+      <p><!-- REMPLACER : Description partenaire --></p>
+    </div>
+  </div>
+
+  <!-- Types de partenariat -->
+  <div class="partnership-types reveal">
+    <div class="partnership-type">
+      <i class="fa-solid fa-handshake" aria-hidden="true"></i>
+      <h3>Partenariat Stratégique</h3>
+      <p>Collaboration long terme pour des projets d'envergure et une présence mutuelle dans les réseaux respectifs.</p>
+    </div>
+    <div class="partnership-type">
+      <i class="fa-solid fa-bullhorn" aria-hidden="true"></i>
+      <h3>Partenariat Médias</h3>
+      <p>Couverture croisée, partage de contenus et amplification mutuelle de la visibilité sur toutes les plateformes.</p>
+    </div>
+    <div class="partnership-type">
+      <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+      <h3>Partenariat Durable</h3>
+      <p>Projets communs autour du développement durable, de l'écotourisme et du commerce éthique en Afrique centrale.</p>
+    </div>
+  </div>
+
+  <!-- Devenir partenaire CTA -->
+  <div style="margin-top:5rem;text-align:center" class="reveal">
+    <p class="section-label" style="justify-content:center" aria-hidden="true">Rejoignez notre réseau</p>
+    <h2 style="font-family:var(--font-display);font-size:2.5rem;font-weight:300;margin-bottom:1rem">
+      Devenez <em>partenaire</em>
+    </h2>
+    <p style="font-size:0.95rem;color:var(--grey-light);max-width:520px;margin:0 auto 2.5rem">
+      Vous souhaitez rejoindre le réseau Delices Medias Group et bénéficier d'une visibilité accrue ? Contactez-nous pour discuter des opportunités de partenariat.
+    </p>
+    <div style="display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap">
+      <a href="contact.html" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Proposer un partenariat</a>
+      <a href="https://wa.me/237677685062" target="_blank" rel="noopener" class="btn btn-outline"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer role="contentinfo">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo"><span>Delices</span> Medias<div class="nav-logo-badge">Group</div></a>
+      <p>Expert en couverture médiatique, événementiel, publicité &amp; marketing au Cameroun.</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/delicesmedias&events" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://wa.me/237677685062" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="mailto:ngatchouguy24@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Navigation</h4><ul>
+      <li><a href="index.html">Accueil</a></li><li><a href="services.html">Services</a></li>
+      <li><a href="partners.html">Partenaires</a></li><li><a href="contact.html">Contact</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Horaires</h4><ul>
+      <li style="font-size:0.82rem;color:var(--grey-light)"><i class="fa-regular fa-clock" style="color:var(--gold);margin-right:0.5rem"></i>Lun–Ven : 8h – 18h</li>
+    </ul><br><span class="footer-lang">&#127467;&#127479; Français</span></div>
+    <div class="footer-col"><h4>Contact</h4><ul class="footer-contact">
+      <li><i class="fa-solid fa-location-dot"></i> Yaoundé, Cameroun</li>
+      <li><i class="fa-solid fa-phone"></i> <a href="tel:+237677685062">+237 677 685 062</a></li>
+      <li><i class="fa-solid fa-envelope"></i> <a href="mailto:ngatchouguy24@gmail.com">ngatchouguy24@gmail.com</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Delices Medias Group. Tous droits réservés.</p>
+    <div class="footer-legal"><a href="privacy-policy.html">Politique de confidentialité</a><a href="terms.html">Termes et conditions</a></div>
+    <p>Créé par <a href="https://kinerty.com" target="_blank" rel="noopener">Kinerty</a></p>
+  </div>
+</footer>
+<a href="https://wa.me/237677685062" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+<button class="back-to-top" aria-label="Retour en haut"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></button>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

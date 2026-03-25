@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Équipe | Delices Medias Group — Notre Équipe</title>
+  <meta name="description" content="Rencontrez l'équipe talentueuse de Delices Medias Group, experts en médias, événementiel et marketing au Cameroun.">
+  <meta property="og:title" content="Équipe | Delices Medias Group">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2.5rem;
+    }
+    .team-card {
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: all var(--transition);
+      position: relative;
+    }
+    .team-card:hover {
+      border-color: rgba(201,168,76,0.4);
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-gold);
+    }
+    .team-photo {
+      aspect-ratio: 4/5;
+      overflow: hidden;
+      position: relative;
+    }
+    .team-photo img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+      filter: grayscale(20%);
+    }
+    .team-card:hover .team-photo img {
+      transform: scale(1.05);
+      filter: grayscale(0%);
+    }
+    .team-photo-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(10,22,40,0.7), transparent 50%);
+    }
+    .team-body { padding: 1.5rem; }
+    .team-body h3 {
+      font-family: var(--font-display);
+      font-size: 1.3rem; font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+    .team-role {
+      font-family: var(--font-mono);
+      font-size: 0.62rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 0.8rem;
+    }
+    .team-body p { font-size: 0.82rem; line-height: 1.6; color: var(--grey-light); margin-bottom: 1rem; }
+    .team-socials { display: flex; gap: 0.6rem; }
+    .team-socials a {
+      width: 32px; height: 32px;
+      border: 1px solid var(--glass-border);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--grey-light); font-size: 0.75rem;
+      transition: all var(--transition);
+    }
+    .team-socials a:hover { border-color: var(--gold); color: var(--gold); }
+
+    .team-founder {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 400px 1fr;
+      gap: 0;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+    .team-founder .team-photo { aspect-ratio: auto; height: 100%; min-height: 400px; }
+    .team-founder-body {
+      background: var(--blue-mid);
+      padding: 3rem;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .founder-tag {
+      font-family: var(--font-mono); font-size: 0.6rem;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1rem;
+      display: flex; align-items: center; gap: 0.8rem;
+    }
+    .founder-tag::before { content: ''; width: 30px; height: 1px; background: var(--gold); }
+
+    @media (max-width: 768px) {
+      .team-founder { grid-template-columns: 1fr; }
+      .team-founder .team-photo { min-height: 300px; }
+      .team-founder-body { padding: 2rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="cursor" aria-hidden="true"></div>
+<div class="cursor-follower" aria-hidden="true"></div>
+<div class="progress-bar" aria-hidden="true"></div>
+<header class="nav" role="banner">
+  <a href="index.html" class="nav-logo"><span>Delices</span> Medias<div class="nav-logo-badge">Group</div></a>
+  <nav class="nav-links">
+    <a href="index.html">Accueil</a><a href="about.html">À Propos</a>
+    <a href="services.html">Services</a><a href="events.html">Événements</a>
+    <a href="blog.html">Blog</a><a href="portfolio.html">Portfolio</a>
+    <a href="team.html" class="active">Équipe</a><a href="contact.html" class="nav-cta">Contact</a>
+  </nav>
+  <button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</header>
+<div class="fullscreen-menu" role="dialog">
+  <nav>
+    <a href="index.html"><span class="menu-num">01</span> Accueil</a>
+    <a href="about.html"><span class="menu-num">02</span> À Propos</a>
+    <a href="services.html"><span class="menu-num">03</span> Services</a>
+    <a href="events.html"><span class="menu-num">04</span> Événements</a>
+    <a href="blog.html"><span class="menu-num">05</span> Blog</a>
+    <a href="portfolio.html"><span class="menu-num">06</span> Portfolio</a>
+    <a href="team.html"><span class="menu-num">07</span> Équipe</a>
+    <a href="partners.html"><span class="menu-num">08</span> Partenaires</a>
+    <a href="testimonials.html"><span class="menu-num">09</span> Témoignages</a>
+    <a href="contact.html"><span class="menu-num">10</span> Contact</a>
+  </nav>
+  <div class="fullscreen-menu-footer">
+    <a href="https://wa.me/237677685062" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+  </div>
+</div>
+
+<section class="page-header">
+  <div class="page-header-bg"><img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1400&auto=format&fit=crop" alt="" loading="lazy"></div>
+  <div class="page-header-content">
+    <div class="breadcrumb"><a href="index.html">Accueil</a><i class="fa-solid fa-chevron-right"></i> Équipe</div>
+    <p class="section-label" aria-hidden="true">Les visages de DMG</p>
+    <h1 class="section-title">Notre <em>Équipe</em></h1>
+    <div class="divider"></div>
+    <p class="section-desc">Des professionnels passionnés au service de votre excellence.</p>
+  </div>
+</section>
+
+<section class="section-pad" role="main" aria-labelledby="team-heading">
+  <p class="section-label" aria-hidden="true">Qui nous sommes</p>
+  <h2 class="section-title reveal" id="team-heading" style="margin-bottom:3rem">L'équipe <em>Delices Medias</em></h2>
+
+  <div class="team-grid">
+    <!-- Fondateur - carte large -->
+    <div class="team-card team-founder reveal">
+      <div class="team-photo">
+        <!-- REMPLACER PAR PHOTO CLIENT : photo officielle du fondateur -->
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&auto=format&fit=crop" alt="Kouimi Ngatchou Guy, Fondateur & Directeur Général de Delices Medias Group" loading="lazy">
+        <div class="team-photo-overlay"></div>
+      </div>
+      <div class="team-founder-body">
+        <div class="founder-tag">Fondateur & Directeur Général</div>
+        <h3 style="font-family:var(--font-display);font-size:2rem;font-weight:600;margin-bottom:0.5rem">Kouimi Ngatchou Guy</h3>
+        <div class="divider"></div>
+        <p style="font-size:0.9rem;line-height:1.8;color:var(--grey-light);margin-bottom:1.5rem">
+          Visionnaire et entrepreneur, Kouimi Ngatchou Guy a fondé Delices Medias Group en 2022 avec la conviction que chaque organisation mérite une voix et une visibilité à la mesure de ses ambitions. Fort d'une expertise pluridisciplinaire en médias, événementiel et communication stratégique, il dirige une équipe dédiée à l'excellence et à l'impact.
+        </p>
+        <div style="display:flex;gap:1.5rem;margin-bottom:1.5rem">
+          <div><strong style="font-family:var(--font-display);font-size:1.5rem;color:var(--gold)">4+</strong><br><span style="font-size:0.7rem;color:var(--grey-mid);text-transform:uppercase;letter-spacing:0.1em">Années d'exp.</span></div>
+          <div><strong style="font-family:var(--font-display);font-size:1.5rem;color:var(--gold)">150+</strong><br><span style="font-size:0.7rem;color:var(--grey-mid);text-transform:uppercase;letter-spacing:0.1em">Projets</span></div>
+          <div><strong style="font-family:var(--font-display);font-size:1.5rem;color:var(--gold)">80+</strong><br><span style="font-size:0.7rem;color:var(--grey-mid);text-transform:uppercase;letter-spacing:0.1em">Clients</span></div>
+        </div>
+        <div class="team-socials">
+          <a href="https://www.facebook.com/delicesmedias&events" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://wa.me/237677685062" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="mailto:ngatchouguy24@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Membres de l'équipe -->
+    <!-- REMPLACER PAR PHOTOS & INFOS RÉELS DES MEMBRES -->
+    <div class="team-card reveal" data-delay="0.1">
+      <div class="team-photo">
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&auto=format&fit=crop" alt="Responsable Communication Delices Medias Group" loading="lazy">
+        <div class="team-photo-overlay"></div>
+      </div>
+      <div class="team-body">
+        <h3><!-- NOM MEMBRE --> Responsable Communication</h3>
+        <p class="team-role">Chargée de Communication & Marketing</p>
+        <p>Experte en stratégie digitale et gestion de communautés, elle pilote la présence en ligne de Delices Medias Group et de ses clients.</p>
+        <div class="team-socials">
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="team-card reveal" data-delay="0.2">
+      <div class="team-photo">
+        <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?w=400&auto=format&fit=crop" alt="Responsable Événementiel Delices Medias Group" loading="lazy">
+        <div class="team-photo-overlay"></div>
+      </div>
+      <div class="team-body">
+        <h3><!-- NOM MEMBRE --> Chef de Projets Événements</h3>
+        <p class="team-role">Responsable Événementiel</p>
+        <p>Coordinateur d'expériences mémorables, il orchestre chaque événement avec précision et créativité pour en faire un succès incontestable.</p>
+        <div class="team-socials">
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="team-card reveal" data-delay="0.3">
+      <div class="team-photo">
+        <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&auto=format&fit=crop" alt="Journaliste Delices Medias Group" loading="lazy">
+        <div class="team-photo-overlay"></div>
+      </div>
+      <div class="team-body">
+        <h3><!-- NOM MEMBRE --> Journaliste & Reporter</h3>
+        <p class="team-role">Rédactrice & Correspondante</p>
+        <p>Plume affûtée et œil acéré, elle couvre l'actualité camerounaise et africaine avec rigueur, neutralité et profondeur d'analyse.</p>
+        <div class="team-socials">
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recrutement CTA -->
+  <div style="margin-top:5rem;background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius-md);padding:3rem;text-align:center" class="reveal">
+    <p class="section-label" style="justify-content:center" aria-hidden="true">Rejoignez-nous</p>
+    <h2 style="font-family:var(--font-display);font-size:2rem;margin-bottom:1rem">Vous avez du <em>talent</em> ?</h2>
+    <p style="font-size:0.9rem;color:var(--grey-light);max-width:500px;margin:0 auto 2rem">
+      Delices Medias Group est toujours à la recherche de profils passionnés et engagés. Envoyez-nous votre candidature spontanée.
+    </p>
+    <a href="contact.html" class="btn btn-primary"><i class="fa-solid fa-user-plus"></i> Candidature spontanée</a>
+  </div>
+</section>
+
+<footer role="contentinfo">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo"><span>Delices</span> Medias<div class="nav-logo-badge">Group</div></a>
+      <p>Expert en couverture médiatique, événementiel, publicité &amp; marketing au Cameroun.</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/delicesmedias&events" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://wa.me/237677685062" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="mailto:ngatchouguy24@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Navigation</h4><ul>
+      <li><a href="index.html">Accueil</a></li><li><a href="about.html">À Propos</a></li>
+      <li><a href="services.html">Services</a></li><li><a href="team.html">Équipe</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Horaires</h4><ul>
+      <li style="font-size:0.82rem;color:var(--grey-light)"><i class="fa-regular fa-clock" style="color:var(--gold);margin-right:0.5rem"></i>Lun–Ven : 8h – 18h</li>
+    </ul><br><span class="footer-lang">&#127467;&#127479; Français</span></div>
+    <div class="footer-col"><h4>Contact</h4><ul class="footer-contact">
+      <li><i class="fa-solid fa-location-dot"></i> Yaoundé, Cameroun</li>
+      <li><i class="fa-solid fa-phone"></i> <a href="tel:+237677685062">+237 677 685 062</a></li>
+      <li><i class="fa-solid fa-envelope"></i> <a href="mailto:ngatchouguy24@gmail.com">ngatchouguy24@gmail.com</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Delices Medias Group. Tous droits réservés.</p>
+    <div class="footer-legal"><a href="privacy-policy.html">Politique de confidentialité</a><a href="terms.html">Termes et conditions</a></div>
+    <p>Créé par <a href="https://kinerty.com" target="_blank" rel="noopener">Kinerty</a></p>
+  </div>
+</footer>
+<a href="https://wa.me/237677685062" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+<button class="back-to-top" aria-label="Retour en haut"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></button>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

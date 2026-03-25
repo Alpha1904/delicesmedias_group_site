@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delices Medias Group | Couverture Médiatique, Événementiel & Marketing au Cameroun</title>
+  <meta name="description" content="Delices Medias Group — Expert en couverture médiatique, événementiel, publicité & marketing au Cameroun. Boostez votre visibilité, notoriété et croissance avec nos solutions multifonctionnelles.">
+  <meta property="og:title" content="Delices Medias Group | Média, Événementiel & Marketing">
+  <meta property="og:description" content="Nous offrons la qualité et un service professionnel à la hauteur de vos attentes. Couverture médiatique, événements, publicité et plaidoyer au Cameroun.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://delicesmedias.com">
+  <link rel="canonical" href="https://delicesmedias.com">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Delices Medias Group",
+    "description": "Couverture médiatique, événementiel, publicité et marketing au Cameroun",
+    "url": "https://delicesmedias.com",
+    "telephone": "+237677685062",
+    "email": "ngatchouguy24@gmail.com",
+    "address": { "@type": "PostalAddress", "addressLocality": "Yaoundé", "addressCountry": "CM" },
+    "foundingDate": "2022",
+    "sameAs": ["https://www.facebook.com/delicesmedias&events"]
+  }
+  </script>
+  <style>
+    /* ── Index-specific ── */
+    .services-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+    .services-intro-text { }
+    .services-intro-visual {
+      position: relative;
+    }
+    .services-intro-visual img {
+      width: 100%;
+      border-radius: var(--radius-md);
+      opacity: 0.85;
+    }
+    .services-intro-visual::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, var(--gold), transparent 60%);
+      z-index: -1;
+      padding: 1px;
+    }
+    .floating-badge {
+      position: absolute;
+      bottom: -1.5rem; left: -1.5rem;
+      background: var(--blue-deep);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+      padding: 1.2rem 1.5rem;
+      box-shadow: var(--shadow-gold);
+    }
+    .floating-badge strong {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--gold);
+      display: block;
+    }
+    .floating-badge span {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--grey-light);
+    }
+
+    /* Hero media columns */
+    .hero-media-strip {
+      position: absolute;
+      right: 4rem; top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      z-index: 2;
+    }
+    .hero-media-thumb {
+      width: 80px; height: 80px;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      border: 1px solid var(--glass-border);
+      opacity: 0.6;
+      transition: opacity var(--transition), transform var(--transition);
+    }
+    .hero-media-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-media-thumb:hover { opacity: 1; transform: translateX(-6px); }
+
+    /* About strip */
+    .about-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+    .about-strip-img {
+      position: relative;
+      overflow: hidden;
+      min-height: 500px;
+    }
+    .about-strip-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s ease;
+    }
+    .about-strip-img:hover img { transform: scale(1.04); }
+    .about-strip-content {
+      background: var(--blue-mid);
+      padding: 5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* Partners logos */
+    .partners-strip {
+      overflow: hidden;
+      padding: 3rem 0;
+      background: rgba(255,255,255,0.02);
+      border-top: 1px solid var(--glass-border);
+      border-bottom: 1px solid var(--glass-border);
+    }
+    .partners-scroll {
+      display: flex;
+      gap: 4rem;
+      align-items: center;
+      animation: scrollLeft 30s linear infinite;
+      width: max-content;
+    }
+    @keyframes scrollLeft {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .partner-logo {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--grey-mid);
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+      transition: color var(--transition);
+    }
+    .partner-logo:hover { color: var(--gold); }
+    .partner-sep {
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: var(--gold);
+      opacity: 0.4;
+      flex-shrink: 0;
+    }
+
+    /* CTA section */
+    .cta-section {
+      background: linear-gradient(135deg, var(--blue-bright) 0%, var(--blue-mid) 60%, var(--blue-deep) 100%);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(201,168,76,0.15), transparent 60%);
+    }
+    .cta-section-content { position: relative; z-index: 1; }
+    .cta-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+    }
+    .cta-title em { font-style: italic; color: var(--gold); }
+
+    @media (max-width: 768px) {
+      .services-intro { grid-template-columns: 1fr; gap: 3rem; }
+      .about-strip { grid-template-columns: 1fr; }
+      .about-strip-content { padding: 3rem 1.5rem; }
+      .hero-media-strip { display: none; }
+      .floating-badge { position: static; margin-top: 1.5rem; display: inline-block; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Cursor -->
+<div class="cursor" aria-hidden="true"></div>
+<div class="cursor-follower" aria-hidden="true"></div>
+
+<!-- Progress bar -->
+<div class="progress-bar" aria-hidden="true"></div>
+
+<!-- Navigation -->
+<header class="nav" role="banner">
+  <a href="index.html" class="nav-logo" aria-label="Delices Medias Group - Accueil">
+    <span>Delices</span> Medias<div class="nav-logo-badge">Group</div>
+  </a>
+  <nav class="nav-links" aria-label="Navigation principale">
+    <a href="index.html" class="active">Accueil</a>
+    <a href="about.html">À Propos</a>
+    <a href="services.html">Services</a>
+    <a href="events.html">Événements</a>
+    <a href="blog.html">Blog</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="team.html">Équipe</a>
+    <a href="contact.html" class="nav-cta">Contact</a>
+  </nav>
+  <button class="burger" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- Fullscreen Menu -->
+<div class="fullscreen-menu" role="dialog" aria-label="Menu navigation">
+  <nav>
+    <a href="index.html"><span class="menu-num">01</span> Accueil</a>
+    <a href="about.html"><span class="menu-num">02</span> À Propos</a>
+    <a href="services.html"><span class="menu-num">03</span> Services</a>
+    <a href="events.html"><span class="menu-num">04</span> Événements</a>
+    <a href="blog.html"><span class="menu-num">05</span> Blog</a>
+    <a href="portfolio.html"><span class="menu-num">06</span> Portfolio</a>
+    <a href="team.html"><span class="menu-num">07</span> Équipe</a>
+    <a href="partners.html"><span class="menu-num">08</span> Partenaires</a>
+    <a href="testimonials.html"><span class="menu-num">09</span> Témoignages</a>
+    <a href="contact.html"><span class="menu-num">10</span> Contact</a>
+  </nav>
+  <div class="fullscreen-menu-footer">
+    <a href="https://wa.me/237677685062" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+    <a href="https://www.facebook.com/delicesmedias&events" target="_blank" rel="noopener"><i class="fa-brands fa-facebook"></i> Facebook</a>
+    <a href="mailto:ngatchouguy24@gmail.com">ngatchouguy24@gmail.com</a>
+  </div>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" aria-label="Accueil hero">
+  <div class="hero-bg">
+    <!-- REMPLACER PAR PHOTO CLIENT : image principale hero -->
+    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1400&auto=format&fit=crop" alt="Couverture médiatique et événementiel Delices Medias Group" loading="eager">
+  </div>
+  <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
+  <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
+
+  <div class="hero-media-strip" aria-hidden="true">
+    <div class="hero-media-thumb"><img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=200&auto=format&fit=crop" alt=""></div>
+    <div class="hero-media-thumb"><img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=200&auto=format&fit=crop" alt=""></div>
+    <div class="hero-media-thumb"><img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=200&auto=format&fit=crop" alt=""></div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-tag" aria-hidden="true">Yaoundé, Cameroun · Depuis 2022</div>
+    <h1 class="hero-title" aria-label="Osez la qualité — Quand compétence et expertise se mêlent">
+      <span class="line"><span>Osez la <em>qualité</em>,</span></span>
+      <span class="line"><span>quand compétence</span></span>
+      <span class="line"><span>et expertise <em>se mêlent</em></span></span>
+    </h1>
+    <p class="hero-desc">
+      Média, événementiel, publicité &amp; marketing — Delices Medias Group propulse la visibilité, la notoriété et la croissance de vos entreprises et organisations au Cameroun et au-delà.
+    </p>
+    <div class="hero-actions">
+      <a href="services.html" class="btn btn-primary">
+        <i class="fa-solid fa-rocket"></i> Découvrir nos services
+      </a>
+      <a href="contact.html" class="btn btn-outline">
+        <i class="fa-solid fa-envelope"></i> Demander un devis
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-scroll" aria-hidden="true">
+    <span>Scroll</span>
+    <div class="hero-scroll-line"></div>
+  </div>
+</section>
+
+<!-- ═══ PARTNERS STRIP ═══ -->
+<div class="partners-strip" aria-label="Nos partenaires">
+  <div class="partners-scroll" aria-hidden="true">
+    <span class="partner-logo">Événementiel</span><span class="partner-sep"></span>
+    <span class="partner-logo">Publicité</span><span class="partner-sep"></span>
+    <span class="partner-logo">Marketing Digital</span><span class="partner-sep"></span>
+    <span class="partner-logo">Couverture Médiatique</span><span class="partner-sep"></span>
+    <span class="partner-logo">Plaidoyer & Lobbying</span><span class="partner-sep"></span>
+    <span class="partner-logo">Placement de Personnel</span><span class="partner-sep"></span>
+    <span class="partner-logo">Réputation en Ligne</span><span class="partner-sep"></span>
+    <span class="partner-logo">Développement Durable</span><span class="partner-sep"></span>
+    <span class="partner-logo">Écotourisme</span><span class="partner-sep"></span>
+    <span class="partner-logo">Commerce Éthique</span><span class="partner-sep"></span>
+    <!-- Duplicate for seamless loop -->
+    <span class="partner-logo">Événementiel</span><span class="partner-sep"></span>
+    <span class="partner-logo">Publicité</span><span class="partner-sep"></span>
+    <span class="partner-logo">Marketing Digital</span><span class="partner-sep"></span>
+    <span class="partner-logo">Couverture Médiatique</span><span class="partner-sep"></span>
+    <span class="partner-logo">Plaidoyer & Lobbying</span><span class="partner-sep"></span>
+    <span class="partner-logo">Placement de Personnel</span><span class="partner-sep"></span>
+    <span class="partner-logo">Réputation en Ligne</span><span class="partner-sep"></span>
+    <span class="partner-logo">Développement Durable</span><span class="partner-sep"></span>
+    <span class="partner-logo">Écotourisme</span><span class="partner-sep"></span>
+    <span class="partner-logo">Commerce Éthique</span><span class="partner-sep"></span>
+  </div>
+</div>
+
+<!-- ═══ STATS ═══ -->
+<div class="stats-strip" role="region" aria-label="Nos chiffres clés">
+  <div class="stat-item reveal">
+    <span class="stat-num" data-count="4" data-suffix="+">0+</span>
+    <span class="stat-label">Années d'expertise</span>
+  </div>
+  <div class="stat-item reveal" data-delay="0.1">
+    <span class="stat-num" data-count="150" data-suffix="+">0+</span>
+    <span class="stat-label">Événements couverts</span>
+  </div>
+  <div class="stat-item reveal" data-delay="0.2">
+    <span class="stat-num" data-count="80" data-suffix="+">0+</span>
+    <span class="stat-label">Clients satisfaits</span>
+  </div>
+  <div class="stat-item reveal" data-delay="0.3">
+    <span class="stat-num" data-count="12" data-suffix="">0</span>
+    <span class="stat-label">Secteurs couverts</span>
+  </div>
+</div>
+
+<!-- ═══ SERVICES ═══ -->
+<section class="section-pad" aria-labelledby="services-heading">
+  <div class="services-intro">
+    <div class="services-intro-text">
+      <p class="section-label" aria-hidden="true">Ce que nous faisons</p>
+      <h2 class="section-title" id="services-heading">
+        Un écosystème complet<br>au service de votre <em>rayonnement</em>
+      </h2>
+      <div class="divider"></div>
+      <p class="section-desc">
+        De la couverture médiatique à l'événementiel en passant par la publicité et le plaidoyer, Delices Medias Group vous offre une expertise multifonctionnelle unique au Cameroun. Notre leitmotiv : écoresponsable, écocitoyen.
+      </p>
+      <br>
+      <a href="services.html" class="btn btn-gold-outline">
+        <i class="fa-solid fa-arrow-right"></i> Tous nos services
+      </a>
+    </div>
+    <div class="services-intro-visual reveal-right">
+      <!-- REMPLACER PAR PHOTO CLIENT : équipe ou événement phare -->
+      <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&auto=format&fit=crop" alt="Équipe Delices Medias Group en action">
+      <div class="floating-badge">
+        <strong>2022</strong>
+        <span>Fondé à Yaoundé</span>
+      </div>
+    </div>
+  </div>
+
+  <br><br>
+
+  <!-- Bento Grid Services -->
+  <div class="bento-grid" role="list">
+    <div class="bento-card" role="listitem">
+      <div class="bento-num">01</div>
+      <div class="bento-icon"><i class="fa-solid fa-newspaper" aria-hidden="true"></i></div>
+      <h3>Couverture Médiatique</h3>
+      <p>Site d'informations générales et thématiques. Reportages, interviews, analyses — nous donnons voix à votre actualité avec rigueur et impact.</p>
+    </div>
+    <div class="bento-card" role="listitem">
+      <div class="bento-num">02</div>
+      <div class="bento-icon"><i class="fa-solid fa-champagne-glasses" aria-hidden="true"></i></div>
+      <h3>Événementiel</h3>
+      <p>Conception, organisation et couverture de tout type d'événements. Placement de personnel événementiel qualifié pour vos occasions.</p>
+    </div>
+    <div class="bento-card" role="listitem">
+      <div class="bento-num">03</div>
+      <div class="bento-icon"><i class="fa-solid fa-bullhorn" aria-hidden="true"></i></div>
+      <h3>Publicité & Marketing</h3>
+      <p>Packs marketing sur mesure pour booster la visibilité, la notoriété et la croissance de votre entreprise ou organisation.</p>
+    </div>
+    <div class="bento-card wide" role="listitem">
+      <div class="bento-num">04</div>
+      <div class="bento-icon"><i class="fa-solid fa-handshake-angle" aria-hidden="true"></i></div>
+      <h3>Plaidoyer & Lobbying pour Causes Sociales</h3>
+      <p>Intermédiaire de confiance pour les organisations caritatives et causes sociales. Nous portons votre voix auprès des décideurs et créons la visibilité nécessaire à votre impact.</p>
+    </div>
+    <div class="bento-card" role="listitem">
+      <div class="bento-num">05</div>
+      <div class="bento-icon"><i class="fa-solid fa-star" aria-hidden="true"></i></div>
+      <h3>Réputation en Ligne</h3>
+      <p>Gestion et amélioration de votre e-réputation sur toutes les plateformes. En ligne comme hors ligne, votre image est entre de bonnes mains.</p>
+    </div>
+    <div class="bento-card" role="listitem">
+      <div class="bento-num">06</div>
+      <div class="bento-icon"><i class="fa-solid fa-leaf" aria-hidden="true"></i></div>
+      <h3>Développement Durable</h3>
+      <p>Écoresponsabilité, écocitoyenneté, écotourisme et économie verte. Nous intégrons la durabilité environnementale au cœur de chaque projet.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ABOUT STRIP ═══ -->
+<section class="about-strip" aria-labelledby="about-heading">
+  <div class="about-strip-img">
+    <!-- REMPLACER PAR PHOTO CLIENT : bureau ou terrain -->
+    <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=900&auto=format&fit=crop" alt="L'équipe Delices Medias Group au travail">
+  </div>
+  <div class="about-strip-content">
+    <p class="section-label" aria-hidden="true">Notre identité</p>
+    <h2 class="section-title" id="about-heading">
+      Qualité, expertise<br>et <em>éthique</em>
+    </h2>
+    <div class="divider"></div>
+    <p class="section-desc" style="max-width:100%">
+      Fondé en 2022 par Kouimi Ngatchou Guy, Delices Medias Group est né de la conviction que chaque entreprise, organisation et cause mérite une visibilité à la hauteur de ses ambitions. Nous sommes l'allié multifonctionnel que vous attendiez.
+    </p>
+    <br>
+    <ul style="display:flex;flex-direction:column;gap:0.75rem">
+      <li style="display:flex;align-items:center;gap:0.8rem;font-size:0.85rem;color:var(--grey-light)">
+        <i class="fa-solid fa-check" style="color:var(--gold)"></i> Expertise pluridisciplinaire depuis 2022
+      </li>
+      <li style="display:flex;align-items:center;gap:0.8rem;font-size:0.85rem;color:var(--grey-light)">
+        <i class="fa-solid fa-check" style="color:var(--gold)"></i> Approche écoresponsable et durable
+      </li>
+      <li style="display:flex;align-items:center;gap:0.8rem;font-size:0.85rem;color:var(--grey-light)">
+        <i class="fa-solid fa-check" style="color:var(--gold)"></i> Réseau de partenaires locaux et internationaux
+      </li>
+    </ul>
+    <br>
+    <a href="about.html" class="btn btn-primary">
+      <i class="fa-solid fa-users"></i> Notre histoire
+    </a>
+  </div>
+</section>
+
+<!-- ═══ TEMOIGNAGES ═══ -->
+<section class="section-pad section-blue-alt" aria-labelledby="temoignages-heading">
+  <p class="section-label" aria-hidden="true">Ce qu'ils disent</p>
+  <h2 class="section-title reveal" id="temoignages-heading" style="margin-bottom:3rem">
+    La confiance de nos <em>clients</em>
+  </h2>
+  <div class="card-grid stagger-grid" role="list">
+    <div class="testimonial-card" role="listitem">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="testimonial-text">Service intelligent, je suis satisfait. Une équipe réactive et professionnelle qui a su donner une visibilité internationale à notre cause.</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar" aria-hidden="true">E</div>
+        <div class="testimonial-author-info">
+          <strong>E. Marck</strong>
+          <span>États-Unis · Client international</span>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card" role="listitem">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="testimonial-text">Grâce à Delices Medias Group, notre événement annuel a atteint un niveau de couverture et de professionnalisme que nous n'avions jamais connu auparavant.</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar" aria-hidden="true">A</div>
+        <div class="testimonial-author-info">
+          <strong>Aminatou Sow</strong>
+          <span>Yaoundé · Directrice d'ONG</span>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card" role="listitem">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="testimonial-text">Le pack marketing proposé a transformé la notoriété de notre PME en quelques semaines. Un retour sur investissement remarquable et un accompagnement au top.</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar" aria-hidden="true">J</div>
+        <div class="testimonial-author-info">
+          <strong>Jean-Baptiste Mvondo</strong>
+          <span>Douala · Chef d'entreprise</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:3rem">
+    <a href="testimonials.html" class="btn btn-outline">
+      <i class="fa-solid fa-quote-right"></i> Tous les témoignages
+    </a>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="section-pad cta-section" aria-label="Appel à l'action">
+  <div class="cta-section-content">
+    <p class="section-label" style="justify-content:center" aria-hidden="true">Prêt à passer à l'étape suivante ?</p>
+    <h2 class="cta-title reveal">
+      Nous offrons la qualité et un service<br><em>professionnel</em> à la hauteur de vos attentes
+    </h2>
+    <p style="font-size:0.95rem;color:var(--grey-light);margin-bottom:2.5rem;max-width:540px;margin-left:auto;margin-right:auto">
+      Que vous soyez une entreprise, une organisation, un artiste ou une cause sociale — discutons de votre projet dès aujourd'hui.
+    </p>
+    <div style="display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap">
+      <a href="contact.html" class="btn btn-primary">
+        <i class="fa-solid fa-paper-plane"></i> Démarrer un projet
+      </a>
+      <a href="https://wa.me/237677685062" target="_blank" rel="noopener" class="btn btn-outline" aria-label="Contacter sur WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp direct
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer role="contentinfo">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo" aria-label="Delices Medias Group">
+        <span>Delices</span> Medias<div class="nav-logo-badge">Group</div>
+      </a>
+      <p>Expert en couverture médiatique, événementiel, publicité &amp; marketing au Cameroun. Écoresponsable, écocitoyen — nous propulsons votre visibilité et votre impact.</p>
+      <div class="footer-social" aria-label="Réseaux sociaux">
+        <a href="https://www.facebook.com/delicesmedias&events" target="_blank" rel="noopener" aria-label="Facebook Delices Medias"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://wa.me/237677685062" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="mailto:ngatchouguy24@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="about.html">À Propos</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="events.html">Événements</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="team.html">Équipe</a></li>
+        <li><a href="partners.html">Partenaires</a></li>
+        <li><a href="testimonials.html">Témoignages</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Horaires</h4>
+      <ul>
+        <li style="font-size:0.82rem;color:var(--grey-light);margin-bottom:0.5rem">
+          <i class="fa-regular fa-clock" style="color:var(--gold);margin-right:0.5rem"></i>
+          Lun–Ven : 8h – 18h
+        </li>
+        <li style="font-size:0.82rem;color:var(--grey-mid)">Samedi–Dimanche : Sur RDV</li>
+      </ul>
+      <br>
+      <h4>Langue</h4>
+      <span class="footer-lang">&#127467;&#127479; Français</span>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul class="footer-contact">
+        <li><i class="fa-solid fa-location-dot"></i> Yaoundé, Cameroun</li>
+        <li><i class="fa-solid fa-phone"></i> <a href="tel:+237677685062">+237 677 685 062</a></li>
+        <li><i class="fa-solid fa-phone"></i> <a href="tel:+237693193465">+237 693 193 465</a></li>
+        <li><i class="fa-solid fa-envelope"></i> <a href="mailto:ngatchouguy24@gmail.com">ngatchouguy24@gmail.com</a></li>
+      </ul>
+      <br>
+      <a href="https://wa.me/237677685062" target="_blank" rel="noopener" class="btn btn-gold-outline" style="font-size:0.7rem;padding:0.6rem 1.2rem" aria-label="Nous contacter sur WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp
+      </a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Delices Medias Group. Tous droits réservés.</p>
+    <div class="footer-legal">
+      <a href="privacy-policy.html">Politique de confidentialité</a>
+      <a href="terms.html">Termes et conditions</a>
+    </div>
+    <p>Créé par <a href="https://kinerty.com" target="_blank" rel="noopener">Kinerty</a></p>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/237677685062" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Nous contacter sur WhatsApp">
+  <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+</a>
+
+<!-- Back to top -->
+<button class="back-to-top" aria-label="Retour en haut de page">
+  <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+</button>
+
+<!-- GSAP CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+<!-- SEA: Configurer Google Ads ici -->
+</body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Événements | Delices Medias Group — Agenda & Couverture</title>
+  <meta name="description" content="Retrouvez tous les événements couverts et organisés par Delices Medias Group au Cameroun : conférences, galas, forums, séminaires et bien plus.">
+  <meta property="og:title" content="Événements | Delices Medias Group">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .event-card {
+      background: var(--glass); border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md); overflow: hidden;
+      display: grid; grid-template-columns: 120px 1fr;
+      transition: all var(--transition);
+    }
+    .event-card:hover { border-color: rgba(201,168,76,0.4); transform: translateY(-4px); box-shadow: var(--shadow-gold); }
+    .event-date-block {
+      background: linear-gradient(135deg, var(--blue-bright), var(--blue-mid));
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 1.5rem 1rem; text-align: center; border-right: 1px solid var(--glass-border);
+    }
+    .event-day { font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; color: var(--gold); line-height: 1; }
+    .event-month { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--grey-light); margin-top: 0.3rem; }
+    .event-year { font-family: var(--font-mono); font-size: 0.6rem; color: var(--grey-mid); }
+    .event-body { padding: 1.5rem; }
+    .event-body .card-tag { margin-bottom: 0.5rem; }
+    .event-body h3 { font-family: var(--font-display); font-size: 1.2rem; margin-bottom: 0.5rem; }
+    .event-body p { font-size: 0.83rem; color: var(--grey-light); line-height: 1.6; margin-bottom: 1rem; }
+    .event-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .event-meta span { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.1em; color: var(--grey-mid); display: flex; align-items: center; gap: 0.4rem; }
+    .event-meta span i { color: var(--gold); }
+
+    .events-grid { display: flex; flex-direction: column; gap: 1.5rem; }
+    .events-section-title { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem; }
+    .events-section-title::after { content: ''; flex: 1; height: 1px; background: var(--glass-border); }
+
+    @media (max-width: 600px) {
+      .event-card { grid-template-columns: 90px 1fr; }
+      .event-day { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="cursor" aria-hidden="true"></div>
+<div class="cursor-follower" aria-hidden="true"></div>
+<div class="progress-bar" aria-hidden="true"></div>
+<header class="nav" role="banner">
+  <a href="index.html" class="nav-logo"><span>Delices</span> Medias<div class="nav-logo-badge">Group</div></a>
+  <nav class="nav-links">
+    <a href="index.html">Accueil</a><a href="about.html">À Propos</a>
+    <a href="services.html">Services</a><a href="events.html" class="active">Événements</a>
+    <a href="blog.html">Blog</a><a href="portfolio.html">Portfolio</a>
+    <a href="team.html">Équipe</a><a href="contact.html" class="nav-cta">Contact</a>
+  </nav>
+  <button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</header>
+<div class="fullscreen-menu" role="dialog">
+  <nav>
+    <a href="index.html"><span class="menu-num">01</span> Accueil</a>
+    <a href="about.html"><span class="menu-num">02</span> À Propos</a>
+    <a href="services.html"><span class="menu-num">03</span> Services</a>
+    <a href="events.html"><span class="menu-num">04</span> Événements</a>
+    <a href="blog.html"><span class="menu-num">05</span> Blog</a>
+    <a href="portfolio.html"><span class="menu-num">06</span> Portfolio</a>
+    <a href="team.html"><span class="menu-num">07</span> Équipe</a>
+    <a href="partners.html"><span class="menu-num">08</span> Partenaires</a>
+    <a href="testimonials.html"><span class="menu-num">09</span> Témoignages</a>
+    <a href="contact.html"><span class="menu-num">10</span> Contact</a>
+  </nav>
+  <div class="fullscreen-menu-footer">
+    <a href="https://wa.me/237677685062" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+  </div>
+</div>
+
+<section class="page-header">
+  <div class="page-header-bg"><img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1400&auto=format&fit=crop" alt="" loading="lazy"></div>
+  <div class="page-header-content">
+    <div class="breadcrumb"><a href="index.html">Accueil</a><i class="fa-solid fa-chevron-right"></i> Événements</div>
+    <p class="section-label" aria-hidden="true">Agenda & couverture</p>
+    <h1 class="section-title">Nos <em>Événements</em></h1>
+    <div class="divider"></div>
+    <p class="section-desc">Conférences, galas, forums — découvrez les événements que nous organisons et couvrons.</p>
+  </div>
+</section>
+
+<section class="section-pad" role="main" aria-labelledby="events-heading">
+  <div style="display:grid;grid-template-columns:1fr 300px;gap:4rem;align-items:start">
+    <div>
+      <h2 class="section-title reveal" id="events-heading" style="margin-bottom:2.5rem">Prochains <em>événements</em></h2>
+
+      <p class="events-section-title">À venir · 2026</p>
+      <div class="events-grid" aria-label="Événements à venir">
+        <article class="event-card reveal">
+          <div class="event-date-block">
+            <span class="event-day">15</span>
+            <span class="event-month">Avril</span>
+            <span class="event-year">2026</span>
+          </div>
+          <div class="event-body">
+            <span class="card-tag">Forum · Yaoundé</span>
+            <h3>Forum sur la Communication Durable en Afrique Centrale</h3>
+            <p>Une journée d'échanges et de partages sur les meilleures pratiques de communication responsable et l'engagement des organisations pour le développement durable.</p>
+            <div class="event-meta">
+              <span><i class="fa-solid fa-location-dot"></i> Yaoundé, Cameroun</span>
+              <span><i class="fa-solid fa-clock"></i> 9h00 – 17h00</span>
+              <span><i class="fa-solid fa-users"></i> Ouvert au public</span>
+            </div>
+          </div>
+        </article>
+        <article class="event-card reveal" data-delay="0.1">
+          <div class="event-date-block">
+            <span class="event-day">28</span>
+            <span class="event-month">Mai</span>
+            <span class="event-year">2026</span>
+          </div>
+          <div class="event-body">
+            <span class="card-tag">Gala · Yaoundé</span>
+            <h3>Gala de l'Excellence Entrepreneuriale Camerounaise</h3>
+            <p>Soirée de gala dédiée à la célébration des entrepreneurs camerounais qui ont marqué l'année par leur impact économique et social exceptionnel.</p>
+            <div class="event-meta">
+              <span><i class="fa-solid fa-location-dot"></i> Hôtel Hilton, Yaoundé</span>
+              <span><i class="fa-solid fa-clock"></i> 19h00 – 23h00</span>
+              <span><i class="fa-solid fa-ticket"></i> Sur invitation</span>
+            </div>
+          </div>
+        </article>
+        <article class="event-card reveal" data-delay="0.2">
+          <div class="event-date-block">
+            <span class="event-day">12</span>
+            <span class="event-month">Juin</span>
+            <span class="event-year">2026</span>
+          </div>
+          <div class="event-body">
+            <span class="card-tag">Séminaire · En ligne</span>
+            <h3>Masterclass : Booster sa Visibilité sur les Réseaux Sociaux Africains</h3>
+            <p>Formation intensive animée par les experts de Delices Medias Group sur les stratégies digitales adaptées au marché africain.</p>
+            <div class="event-meta">
+              <span><i class="fa-solid fa-video"></i> En ligne (Zoom)</span>
+              <span><i class="fa-solid fa-clock"></i> 10h00 – 13h00</span>
+              <span><i class="fa-solid fa-users"></i> Inscription requise</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <br><br>
+      <p class="events-section-title">Passés · Réalisations</p>
+      <div class="events-grid" aria-label="Événements passés">
+        <article class="event-card reveal" style="opacity:0.7">
+          <div class="event-date-block" style="background:linear-gradient(135deg,var(--blue-mid),var(--blue-deep))">
+            <span class="event-day">08</span>
+            <span class="event-month">Mars</span>
+            <span class="event-year">2026</span>
+          </div>
+          <div class="event-body">
+            <span class="card-tag">Célébration · Yaoundé</span>
+            <h3>Journée Internationale des Droits des Femmes — Couverture officielle</h3>
+            <p>Couverture médiatique complète des célébrations officielles à Yaoundé pour le 8 mars 2026.</p>
+            <div class="event-meta">
+              <span><i class="fa-solid fa-location-dot"></i> Yaoundé</span>
+              <span><i class="fa-solid fa-check" style="color:#25D366"></i> Terminé</span>
+            </div>
+          </div>
+        </article>
+        <article class="event-card reveal" data-delay="0.1" style="opacity:0.7">
+          <div class="event-date-block" style="background:linear-gradient(135deg,var(--blue-mid),var(--blue-deep))">
+            <span class="event-day">20</span>
+            <span class="event-month">Fév.</span>
+            <span class="event-year">2026</span>
+          </div>
+          <div class="event-body">
+            <span class="card-tag">Conférence · Douala</span>
+            <h3>Conférence sur l'Économie Verte et l'Écotourisme au Cameroun</h3>
+            <p>Organisation et couverture d'une conférence réunissant acteurs publics et privés autour des enjeux de l'économie verte.</p>
+            <div class="event-meta">
+              <span><i class="fa-solid fa-location-dot"></i> Douala</span>
+              <span><i class="fa-solid fa-check" style="color:#25D366"></i> Terminé</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <aside aria-label="Informations complémentaires">
+      <div style="background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius-md);padding:2rem;margin-bottom:2rem">
+        <h3 style="font-family:var(--font-display);font-size:1.2rem;margin-bottom:1rem">Vous organisez un événement ?</h3>
+        <p style="font-size:0.83rem;color:var(--grey-light);margin-bottom:1.5rem">Confiez l'organisation, la couverture ou le placement de personnel à Delices Medias Group.</p>
+        <a href="contact.html" class="btn btn-primary" style="width:100%;justify-content:center;font-size:0.75rem">
+          <i class="fa-solid fa-paper-plane"></i> Nous contacter
+        </a>
+        <br>
+        <a href="https://wa.me/237677685062" target="_blank" rel="noopener" class="btn btn-outline" style="width:100%;justify-content:center;font-size:0.75rem;margin-top:0.8rem">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp direct
+        </a>
+      </div>
+      <div style="background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius-md);padding:2rem">
+        <h3 style="font-family:var(--font-display);font-size:1.1rem;margin-bottom:1rem">Nos services événementiels</h3>
+        <ul style="display:flex;flex-direction:column;gap:0.7rem">
+          <li style="display:flex;gap:0.6rem;font-size:0.82rem;color:var(--grey-light)"><i class="fa-solid fa-check" style="color:var(--gold);margin-top:2px;flex-shrink:0"></i>Organisation complète</li>
+          <li style="display:flex;gap:0.6rem;font-size:0.82rem;color:var(--grey-light)"><i class="fa-solid fa-check" style="color:var(--gold);margin-top:2px;flex-shrink:0"></i>Couverture photo & vidéo</li>
+          <li style="display:flex;gap:0.6rem;font-size:0.82rem;color:var(--grey-light)"><i class="fa-solid fa-check" style="color:var(--gold);margin-top:2px;flex-shrink:0"></i>Placement de personnel</li>
+          <li style="display:flex;gap:0.6rem;font-size:0.82rem;color:var(--grey-light)"><i class="fa-solid fa-check" style="color:var(--gold);margin-top:2px;flex-shrink:0"></i>Communication & promotion</li>
+          <li style="display:flex;gap:0.6rem;font-size:0.82rem;color:var(--grey-light)"><i class="fa-solid fa-check" style="color:var(--gold);margin-top:2px;flex-shrink:0"></i>Retransmission en ligne</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<footer role="contentinfo">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo"><span>Delices</span> Medias<div class="nav-logo-badge">Group</div></a>
+      <p>Expert en couverture médiatique, événementiel, publicité &amp; marketing au Cameroun.</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/delicesmedias&events" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://wa.me/237677685062" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="mailto:ngatchouguy24@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Navigation</h4><ul>
+      <li><a href="index.html">Accueil</a></li><li><a href="services.html">Services</a></li>
+      <li><a href="events.html">Événements</a></li><li><a href="contact.html">Contact</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Horaires</h4><ul>
+      <li style="font-size:0.82rem;color:var(--grey-light)"><i class="fa-regular fa-clock" style="color:var(--gold);margin-right:0.5rem"></i>Lun–Ven : 8h – 18h</li>
+    </ul><br><span class="footer-lang">&#127467;&#127479; Français</span></div>
+    <div class="footer-col"><h4>Contact</h4><ul class="footer-contact">
+      <li><i class="fa-solid fa-location-dot"></i> Yaoundé, Cameroun</li>
+      <li><i class="fa-solid fa-phone"></i> <a href="tel:+237677685062">+237 677 685 062</a></li>
+      <li><i class="fa-solid fa-envelope"></i> <a href="mailto:ngatchouguy24@gmail.com">ngatchouguy24@gmail.com</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Delices Medias Group. Tous droits réservés.</p>
+    <div class="footer-legal"><a href="privacy-policy.html">Politique de confidentialité</a><a href="terms.html">Termes et conditions</a></div>
+    <p>Créé par <a href="https://kinerty.com" target="_blank" rel="noopener">Kinerty</a></p>
+  </div>
+</footer>
+<a href="https://wa.me/237677685062" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+<button class="back-to-top" aria-label="Retour en haut"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></button>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

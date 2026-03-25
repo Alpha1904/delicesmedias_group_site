@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Delices Medias Group — Nos Réalisations</title>
+  <meta name="description" content="Découvrez le portfolio de Delices Medias Group : événements couverts, campagnes publicitaires, projets marketing et actions de plaidoyer au Cameroun.">
+  <meta property="og:title" content="Portfolio | Delices Medias Group">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .masonry-grid {
+      columns: 3;
+      column-gap: 1.5rem;
+    }
+    .masonry-item {
+      break-inside: avoid;
+      margin-bottom: 1.5rem;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      position: relative;
+      cursor: none;
+    }
+    .masonry-item img {
+      width: 100%; display: block;
+      transition: transform 0.6s ease;
+    }
+    .masonry-item:hover img { transform: scale(1.04); }
+    .masonry-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(10,22,40,0.9), transparent 50%);
+      opacity: 0; transition: opacity var(--transition);
+      display: flex; flex-direction: column; justify-content: flex-end; padding: 1.5rem;
+    }
+    .masonry-item:hover .masonry-overlay { opacity: 1; }
+    .masonry-overlay span {
+      font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem;
+    }
+    .masonry-overlay h3 { font-family: var(--font-display); font-size: 1rem; }
+    @media (max-width: 1024px) { .masonry-grid { columns: 2; } }
+    @media (max-width: 600px) { .masonry-grid { columns: 1; } }
+  </style>
+</head>
+<body>
+<div class="cursor" aria-hidden="true"></div>
+<div class="cursor-follower" aria-hidden="true"></div>
+<div class="progress-bar" aria-hidden="true"></div>
+<header class="nav" role="banner">
+  <a href="index.html" class="nav-logo"><span>Delices</span> Medias<div class="nav-logo-badge">Group</div></a>
+  <nav class="nav-links">
+    <a href="index.html">Accueil</a><a href="about.html">À Propos</a>
+    <a href="services.html">Services</a><a href="events.html">Événements</a>
+    <a href="blog.html">Blog</a><a href="portfolio.html" class="active">Portfolio</a>
+    <a href="team.html">Équipe</a><a href="contact.html" class="nav-cta">Contact</a>
+  </nav>
+  <button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</header>
+<div class="fullscreen-menu" role="dialog">
+  <nav>
+    <a href="index.html"><span class="menu-num">01</span> Accueil</a>
+    <a href="about.html"><span class="menu-num">02</span> À Propos</a>
+    <a href="services.html"><span class="menu-num">03</span> Services</a>
+    <a href="events.html"><span class="menu-num">04</span> Événements</a>
+    <a href="blog.html"><span class="menu-num">05</span> Blog</a>
+    <a href="portfolio.html"><span class="menu-num">06</span> Portfolio</a>
+    <a href="team.html"><span class="menu-num">07</span> Équipe</a>
+    <a href="partners.html"><span class="menu-num">08</span> Partenaires</a>
+    <a href="testimonials.html"><span class="menu-num">09</span> Témoignages</a>
+    <a href="contact.html"><span class="menu-num">10</span> Contact</a>
+  </nav>
+  <div class="fullscreen-menu-footer">
+    <a href="https://wa.me/237677685062" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+  </div>
+</div>
+
+<section class="page-header">
+  <div class="page-header-bg"><img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1400&auto=format&fit=crop" alt="" loading="lazy"></div>
+  <div class="page-header-content">
+    <div class="breadcrumb"><a href="index.html">Accueil</a><i class="fa-solid fa-chevron-right"></i> Portfolio</div>
+    <p class="section-label" aria-hidden="true">Nos réalisations</p>
+    <h1 class="section-title">Portfolio & <em>Galerie</em></h1>
+    <div class="divider"></div>
+    <p class="section-desc">Un aperçu de notre travail, de notre expertise et de notre passion pour l'excellence.</p>
+  </div>
+</section>
+
+<section class="section-pad" role="main" aria-labelledby="portfolio-heading">
+  <h2 class="section-title reveal" id="portfolio-heading" style="margin-bottom:1rem">Nos <em>projets</em></h2>
+  <p style="color:var(--grey-light);font-size:0.85rem;margin-bottom:3rem">
+    <!-- REMPLACER PAR PHOTOS CLIENT : toutes les images ci-dessous sont des placeholders -->
+  </p>
+
+  <div class="masonry-grid" role="list">
+    <div class="masonry-item" role="listitem">
+      <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&auto=format&fit=crop" alt="Événement couvert par Delices Medias Group" loading="lazy">
+      <div class="masonry-overlay">
+        <span>Événementiel</span>
+        <h3>Gala annuel entreprise</h3>
+      </div>
+    </div>
+    <div class="masonry-item" role="listitem">
+      <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=600&auto=format&fit=crop" alt="Couverture médiatique" loading="lazy">
+      <div class="masonry-overlay">
+        <span>Médias</span>
+        <h3>Conférence de presse internationale</h3>
+      </div>
+    </div>
+    <div class="masonry-item" role="listitem">
+      <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600&auto=format&fit=crop" alt="Campagne marketing" loading="lazy">
+      <div class="masonry-overlay">
+        <span>Marketing</span>
+        <h3>Campagne visibilité entreprise</h3>
+      </div>
+    </div>
+    <div class="masonry-item" role="listitem">
+      <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=600&auto=format&fit=crop" alt="Forum plaidoyer" loading="lazy">
+      <div class="masonry-overlay">
+        <span>Plaidoyer</span>
+        <h3>Forum causes sociales</h3>
+      </div>
+    </div>
+    <div class="masonry-item" role="listitem">
+      <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=600&auto=format&fit=crop" alt="Production vidéo" loading="lazy">
+      <div class="masonry-overlay">
+        <span>Production</span>
+        <h3>Reportage entreprise locale</h3>
+      </div>
+    </div>
+    <div class="masonry-item" role="listitem">
+      <img src="https://images.unsplash.com/photo-1542601906897-3f87b0bb2882?w=600&auto=format&fit=crop" alt="Projet développement durable" loading="lazy">
+      <div class="masonry-overlay">
+        <span>Développement durable</span>
+        <h3>Initiative écotourisme</h3>
+      </div>
+    </div>
+    <div class="masonry-item" role="listitem">
+      <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=600&auto=format&fit=crop" alt="Événement corporate" loading="lazy">
+      <div class="masonry-overlay">
+        <span>Événementiel</span>
+        <h3>Séminaire d'entreprise</h3>
+      </div>
+    </div>
+    <div class="masonry-item" role="listitem">
+      <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&auto=format&fit=crop" alt="Mobilisation communautaire" loading="lazy">
+      <div class="masonry-overlay">
+        <span>Social</span>
+        <h3>Mobilisation communautaire</h3>
+      </div>
+    </div>
+    <div class="masonry-item" role="listitem">
+      <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=600&auto=format&fit=crop" alt="Formation communication" loading="lazy">
+      <div class="masonry-overlay">
+        <span>Formation</span>
+        <h3>Atelier communication digitale</h3>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:3rem">
+    <a href="contact.html" class="btn btn-primary">
+      <i class="fa-solid fa-paper-plane"></i> Discuter de votre projet
+    </a>
+  </div>
+</section>
+
+<footer role="contentinfo">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo"><span>Delices</span> Medias<div class="nav-logo-badge">Group</div></a>
+      <p>Expert en couverture médiatique, événementiel, publicité &amp; marketing au Cameroun.</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/delicesmedias&events" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://wa.me/237677685062" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="mailto:ngatchouguy24@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Navigation</h4><ul>
+      <li><a href="index.html">Accueil</a></li><li><a href="services.html">Services</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li><li><a href="contact.html">Contact</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Horaires</h4><ul>
+      <li style="font-size:0.82rem;color:var(--grey-light)"><i class="fa-regular fa-clock" style="color:var(--gold);margin-right:0.5rem"></i>Lun–Ven : 8h – 18h</li>
+    </ul><br><span class="footer-lang">&#127467;&#127479; Français</span></div>
+    <div class="footer-col"><h4>Contact</h4><ul class="footer-contact">
+      <li><i class="fa-solid fa-location-dot"></i> Yaoundé, Cameroun</li>
+      <li><i class="fa-solid fa-phone"></i> <a href="tel:+237677685062">+237 677 685 062</a></li>
+      <li><i class="fa-solid fa-envelope"></i> <a href="mailto:ngatchouguy24@gmail.com">ngatchouguy24@gmail.com</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Delices Medias Group. Tous droits réservés.</p>
+    <div class="footer-legal"><a href="privacy-policy.html">Politique de confidentialité</a><a href="terms.html">Termes et conditions</a></div>
+    <p>Créé par <a href="https://kinerty.com" target="_blank" rel="noopener">Kinerty</a></p>
+  </div>
+</footer>
+<a href="https://wa.me/237677685062" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+<button class="back-to-top" aria-label="Retour en haut"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></button>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

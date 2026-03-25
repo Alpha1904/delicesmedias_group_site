@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Delices Medias Group — Yaoundé, Cameroun</title>
+  <meta name="description" content="Contactez Delices Medias Group pour vos projets de couverture médiatique, événementiel, publicité et marketing. Formulaire de contact, WhatsApp, téléphone et email.">
+  <meta property="og:title" content="Contact | Delices Medias Group">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .contact-info {}
+    .contact-info-item {
+      display: flex;
+      gap: 1.2rem;
+      margin-bottom: 2rem;
+      align-items: flex-start;
+    }
+    .contact-info-icon {
+      width: 48px; height: 48px;
+      background: rgba(201,168,76,0.1);
+      border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold); font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .contact-info-text strong { display: block; font-size: 0.85rem; margin-bottom: 0.3rem; }
+    .contact-info-text a, .contact-info-text span {
+      font-size: 0.85rem; color: var(--grey-light);
+      transition: color var(--transition);
+    }
+    .contact-info-text a:hover { color: var(--gold); }
+
+    .contact-form-wrap {
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      padding: 3rem;
+    }
+
+    .maps-container {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      height: 320px;
+      margin-top: 3rem;
+      border: 1px solid var(--glass-border);
+      background: var(--blue-mid);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 1rem;
+      color: var(--grey-mid);
+      font-size: 0.85rem;
+    }
+    .maps-container i { font-size: 2rem; color: var(--gold); }
+    /* TODO: Remplacer ce placeholder par un vrai iframe Google Maps
+       <iframe src="https://maps.google.com/maps?q=Yaounde+Cameroun&output=embed"
+       width="100%" height="320" style="border:0" loading="lazy"></iframe> */
+
+    .whatsapp-cta-box {
+      background: linear-gradient(135deg, rgba(37,211,102,0.15), rgba(37,211,102,0.05));
+      border: 1px solid rgba(37,211,102,0.3);
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .whatsapp-cta-box i { font-size: 2rem; color: #25D366; }
+    .whatsapp-cta-box h3 { font-size: 1rem; font-family: var(--font-display); margin-bottom: 0.3rem; }
+    .whatsapp-cta-box p { font-size: 0.8rem; color: var(--grey-light); }
+
+    @media (max-width: 768px) {
+      .contact-layout { grid-template-columns: 1fr; gap: 3rem; }
+      .contact-form-wrap { padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="cursor" aria-hidden="true"></div>
+<div class="cursor-follower" aria-hidden="true"></div>
+<div class="progress-bar" aria-hidden="true"></div>
+
+<header class="nav" role="banner">
+  <a href="index.html" class="nav-logo"><span>Delices</span> Medias<div class="nav-logo-badge">Group</div></a>
+  <nav class="nav-links">
+    <a href="index.html">Accueil</a>
+    <a href="about.html">À Propos</a>
+    <a href="services.html">Services</a>
+    <a href="events.html">Événements</a>
+    <a href="blog.html">Blog</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="team.html">Équipe</a>
+    <a href="contact.html" class="nav-cta active">Contact</a>
+  </nav>
+  <button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</header>
+<div class="fullscreen-menu" role="dialog">
+  <nav>
+    <a href="index.html"><span class="menu-num">01</span> Accueil</a>
+    <a href="about.html"><span class="menu-num">02</span> À Propos</a>
+    <a href="services.html"><span class="menu-num">03</span> Services</a>
+    <a href="events.html"><span class="menu-num">04</span> Événements</a>
+    <a href="blog.html"><span class="menu-num">05</span> Blog</a>
+    <a href="portfolio.html"><span class="menu-num">06</span> Portfolio</a>
+    <a href="team.html"><span class="menu-num">07</span> Équipe</a>
+    <a href="partners.html"><span class="menu-num">08</span> Partenaires</a>
+    <a href="testimonials.html"><span class="menu-num">09</span> Témoignages</a>
+    <a href="contact.html"><span class="menu-num">10</span> Contact</a>
+  </nav>
+  <div class="fullscreen-menu-footer">
+    <a href="https://wa.me/237677685062" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+  </div>
+</div>
+
+<section class="page-header">
+  <div class="page-header-bg"><img src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1400&auto=format&fit=crop" alt="" loading="lazy"></div>
+  <div class="page-header-content">
+    <div class="breadcrumb"><a href="index.html">Accueil</a><i class="fa-solid fa-chevron-right"></i> Contact</div>
+    <p class="section-label" aria-hidden="true">Parlons de votre projet</p>
+    <h1 class="section-title">Contactez-<em>nous</em></h1>
+    <div class="divider"></div>
+    <p class="section-desc">Nous répondons dans les 24h. Prêts à propulser votre visibilité ?</p>
+  </div>
+</section>
+
+<section class="section-pad" role="main">
+  <div class="contact-layout">
+
+    <!-- Info colonne -->
+    <div class="reveal-left">
+      <p class="section-label" aria-hidden="true">Nos coordonnées</p>
+      <h2 class="section-title" style="margin-bottom:2.5rem">Trouvez-<em>nous</em></h2>
+
+      <div class="contact-info-item">
+        <div class="contact-info-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
+        <div class="contact-info-text">
+          <strong>Adresse</strong>
+          <span>Yaoundé, Cameroun</span>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-info-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></div>
+        <div class="contact-info-text">
+          <strong>Téléphones</strong>
+          <a href="tel:+237677685062" style="display:block">+237 677 685 062</a>
+          <a href="tel:+237693193465" style="display:block">+237 693 193 465</a>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-info-icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></div>
+        <div class="contact-info-text">
+          <strong>Email</strong>
+          <a href="mailto:ngatchouguy24@gmail.com">ngatchouguy24@gmail.com</a>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-info-icon"><i class="fa-solid fa-clock" aria-hidden="true"></i></div>
+        <div class="contact-info-text">
+          <strong>Horaires d'ouverture</strong>
+          <span>Lundi – Vendredi : 8h – 18h</span><br>
+          <span style="font-size:0.78rem;color:var(--grey-mid)">Samedi – Dimanche : Sur rendez-vous</span>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-info-icon"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></div>
+        <div class="contact-info-text">
+          <strong>Réseaux sociaux</strong>
+          <a href="https://www.facebook.com/delicesmedias&events" target="_blank" rel="noopener">facebook.com/delicesmedias</a>
+        </div>
+      </div>
+
+      <div class="whatsapp-cta-box" role="complementary" aria-label="Contact WhatsApp">
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+        <div>
+          <h3>Réponse rapide sur WhatsApp</h3>
+          <p>Pour une réponse immédiate, contactez-nous directement sur WhatsApp.</p>
+          <br>
+          <a href="https://wa.me/237677685062" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:0.75rem;padding:0.6rem 1.4rem">
+            <i class="fa-brands fa-whatsapp"></i> Démarrer une conversation
+          </a>
+        </div>
+      </div>
+
+      <!-- Google Maps placeholder -->
+      <div class="maps-container" role="img" aria-label="Localisation Yaoundé, Cameroun">
+        <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
+        <span>Yaoundé, Cameroun</span>
+        <span style="font-size:0.7rem;opacity:0.6"><!-- TODO: Intégrer iframe Google Maps avec adresse exacte --></span>
+      </div>
+    </div>
+
+    <!-- Formulaire -->
+    <div class="contact-form-wrap reveal-right">
+      <p class="section-label" aria-hidden="true">Formulaire de contact</p>
+      <h2 class="section-title" style="margin-bottom:2rem">Envoyez-nous<br>un <em>message</em></h2>
+
+      <form id="contact-form" novalidate aria-label="Formulaire de contact">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem">
+          <div class="form-group">
+            <input type="text" id="name" name="name" placeholder="Votre nom" required aria-required="true">
+            <label for="name">Nom complet</label>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" name="email" placeholder="Email" required aria-required="true">
+            <label for="email">Adresse email</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="tel" id="phone" name="phone" placeholder="Téléphone">
+          <label for="phone">Téléphone (optionnel)</label>
+        </div>
+        <div class="form-group">
+          <select id="service" name="service" aria-label="Type de service">
+            <option value="" disabled selected></option>
+            <option value="media">Couverture médiatique</option>
+            <option value="event">Événementiel</option>
+            <option value="marketing">Publicité & Marketing</option>
+            <option value="plaidoyer">Plaidoyer & Lobbying</option>
+            <option value="reputation">Réputation en ligne</option>
+            <option value="durable">Développement durable</option>
+            <option value="autre">Autre / Plusieurs services</option>
+          </select>
+          <label for="service">Service souhaité</label>
+        </div>
+        <div class="form-group">
+          <textarea id="message" name="message" placeholder="Votre message" required aria-required="true"></textarea>
+          <label for="message">Décrivez votre projet</label>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">
+          <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Envoyer le message
+        </button>
+        <p style="font-size:0.72rem;color:var(--grey-mid);margin-top:1rem;text-align:center">
+          En soumettant ce formulaire, vous acceptez notre <a href="privacy-policy.html" style="color:var(--gold)">politique de confidentialité</a>.
+        </p>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<footer role="contentinfo">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo"><span>Delices</span> Medias<div class="nav-logo-badge">Group</div></a>
+      <p>Expert en couverture médiatique, événementiel, publicité &amp; marketing au Cameroun.</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/delicesmedias&events" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://wa.me/237677685062" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="mailto:ngatchouguy24@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Navigation</h4><ul>
+      <li><a href="index.html">Accueil</a></li><li><a href="about.html">À Propos</a></li>
+      <li><a href="services.html">Services</a></li><li><a href="events.html">Événements</a></li>
+      <li><a href="blog.html">Blog</a></li><li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="team.html">Équipe</a></li><li><a href="contact.html">Contact</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Horaires</h4><ul>
+      <li style="font-size:0.82rem;color:var(--grey-light)"><i class="fa-regular fa-clock" style="color:var(--gold);margin-right:0.5rem"></i>Lun–Ven : 8h – 18h</li>
+    </ul><br><span class="footer-lang">&#127467;&#127479; Français</span></div>
+    <div class="footer-col"><h4>Contact</h4><ul class="footer-contact">
+      <li><i class="fa-solid fa-location-dot"></i> Yaoundé, Cameroun</li>
+      <li><i class="fa-solid fa-phone"></i> <a href="tel:+237677685062">+237 677 685 062</a></li>
+      <li><i class="fa-solid fa-envelope"></i> <a href="mailto:ngatchouguy24@gmail.com">ngatchouguy24@gmail.com</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Delices Medias Group. Tous droits réservés.</p>
+    <div class="footer-legal"><a href="privacy-policy.html">Politique de confidentialité</a><a href="terms.html">Termes et conditions</a></div>
+    <p>Créé par <a href="https://kinerty.com" target="_blank" rel="noopener">Kinerty</a></p>
+  </div>
+</footer>
+
+<a href="https://wa.me/237677685062" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+<button class="back-to-top" aria-label="Retour en haut"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></button>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+<!-- SEA: Configurer Google Ads ici -->
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | Delices Medias Group — Actualités & Informations</title>
+  <meta name="description" content="Retrouvez toutes les actualités, analyses et informations thématiques de Delices Medias Group : médias, événementiel, marketing, développement durable au Cameroun.">
+  <meta property="og:title" content="Blog | Delices Medias Group">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .blog-filters {
+      display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem;
+    }
+    .blog-filter {
+      font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.15em;
+      text-transform: uppercase; padding: 6px 16px; border-radius: 20px;
+      border: 1px solid var(--glass-border); color: var(--grey-light);
+      background: transparent; cursor: none; transition: all var(--transition);
+    }
+    .blog-filter.active, .blog-filter:hover {
+      border-color: var(--gold); color: var(--gold); background: rgba(201,168,76,0.08);
+    }
+    .blog-featured {
+      display: grid; grid-template-columns: 1.4fr 1fr; gap: 2rem; margin-bottom: 4rem;
+    }
+    .blog-featured-card {
+      background: var(--glass); border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md); overflow: hidden; position: relative;
+    }
+    .blog-featured-card .card-img { aspect-ratio: 16/9; }
+    .blog-featured-card:first-child .card-img { aspect-ratio: 3/2; }
+    .blog-sidebar { display: flex; flex-direction: column; gap: 1rem; }
+    .blog-mini-card {
+      display: flex; gap: 1rem; background: var(--glass);
+      border: 1px solid var(--glass-border); border-radius: var(--radius-md);
+      overflow: hidden; transition: all var(--transition);
+    }
+    .blog-mini-card:hover { border-color: rgba(201,168,76,0.4); transform: translateX(4px); }
+    .blog-mini-img { width: 90px; height: 90px; flex-shrink: 0; overflow: hidden; }
+    .blog-mini-img img { width: 100%; height: 100%; object-fit: cover; }
+    .blog-mini-body { padding: 0.8rem 0.8rem 0.8rem 0; display: flex; flex-direction: column; justify-content: center; }
+    .blog-mini-body .card-tag { margin-bottom: 0.3rem; }
+    .blog-mini-body h3 { font-family: var(--font-display); font-size: 0.95rem; line-height: 1.3; }
+    @media (max-width: 768px) { .blog-featured { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<div class="cursor" aria-hidden="true"></div>
+<div class="cursor-follower" aria-hidden="true"></div>
+<div class="progress-bar" aria-hidden="true"></div>
+<header class="nav" role="banner">
+  <a href="index.html" class="nav-logo"><span>Delices</span> Medias<div class="nav-logo-badge">Group</div></a>
+  <nav class="nav-links">
+    <a href="index.html">Accueil</a><a href="about.html">À Propos</a>
+    <a href="services.html">Services</a><a href="events.html">Événements</a>
+    <a href="blog.html" class="active">Blog</a><a href="portfolio.html">Portfolio</a>
+    <a href="team.html">Équipe</a><a href="contact.html" class="nav-cta">Contact</a>
+  </nav>
+  <button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</header>
+<div class="fullscreen-menu" role="dialog">
+  <nav>
+    <a href="index.html"><span class="menu-num">01</span> Accueil</a>
+    <a href="about.html"><span class="menu-num">02</span> À Propos</a>
+    <a href="services.html"><span class="menu-num">03</span> Services</a>
+    <a href="events.html"><span class="menu-num">04</span> Événements</a>
+    <a href="blog.html"><span class="menu-num">05</span> Blog</a>
+    <a href="portfolio.html"><span class="menu-num">06</span> Portfolio</a>
+    <a href="team.html"><span class="menu-num">07</span> Équipe</a>
+    <a href="partners.html"><span class="menu-num">08</span> Partenaires</a>
+    <a href="testimonials.html"><span class="menu-num">09</span> Témoignages</a>
+    <a href="contact.html"><span class="menu-num">10</span> Contact</a>
+  </nav>
+  <div class="fullscreen-menu-footer">
+    <a href="https://wa.me/237677685062" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+  </div>
+</div>
+
+<section class="page-header">
+  <div class="page-header-bg"><img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1400&auto=format&fit=crop" alt="" loading="lazy"></div>
+  <div class="page-header-content">
+    <div class="breadcrumb"><a href="index.html">Accueil</a><i class="fa-solid fa-chevron-right"></i> Blog</div>
+    <p class="section-label" aria-hidden="true">Actualités & analyses</p>
+    <h1 class="section-title">Le <em>Blog</em></h1>
+    <div class="divider"></div>
+    <p class="section-desc">Informations, tendances et analyses sur les médias, l'événementiel et le marketing.</p>
+  </div>
+</section>
+
+<section class="section-pad" role="main" aria-labelledby="blog-heading">
+  <h2 class="section-title reveal" id="blog-heading" style="margin-bottom:2rem">Articles à la <em>une</em></h2>
+  
+  <div class="blog-filters" role="navigation" aria-label="Filtres de catégories">
+    <button class="blog-filter active" aria-pressed="true">Tous</button>
+    <button class="blog-filter" aria-pressed="false">Médias</button>
+    <button class="blog-filter" aria-pressed="false">Événementiel</button>
+    <button class="blog-filter" aria-pressed="false">Marketing</button>
+    <button class="blog-filter" aria-pressed="false">Développement durable</button>
+    <button class="blog-filter" aria-pressed="false">Social & Sociétal</button>
+  </div>
+
+  <div class="blog-featured reveal">
+    <div class="blog-featured-card card">
+      <div class="card-img">
+        <!-- REMPLACER PAR PHOTO CLIENT -->
+        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&auto=format&fit=crop" alt="Article vedette : L'impact des médias locaux" loading="lazy">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Médias · 24 Mars 2026</span>
+        <h2 style="font-family:var(--font-display);font-size:1.6rem;margin-bottom:0.8rem">L'impact des médias locaux africains sur la transformation sociale en 2026</h2>
+        <p>Les médias locaux jouent un rôle fondamental dans la construction du tissu social et économique de nos communautés. Découvrez comment Delices Medias Group contribue à cette dynamique...</p>
+        <br>
+        <a href="#" class="btn btn-gold-outline" style="font-size:0.72rem;padding:0.5rem 1.2rem">
+          <i class="fa-solid fa-arrow-right"></i> Lire l'article
+        </a>
+      </div>
+    </div>
+    <div class="blog-sidebar">
+      <div class="blog-mini-card">
+        <div class="blog-mini-img"><img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=200&auto=format&fit=crop" alt="" loading="lazy"></div>
+        <div class="blog-mini-body">
+          <span class="card-tag">Événementiel</span>
+          <h3>5 tendances événementielles à Yaoundé en 2026</h3>
+        </div>
+      </div>
+      <div class="blog-mini-card">
+        <div class="blog-mini-img"><img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=200&auto=format&fit=crop" alt="" loading="lazy"></div>
+        <div class="blog-mini-body">
+          <span class="card-tag">Marketing</span>
+          <h3>Comment booster sa visibilité sur les réseaux sociaux en Afrique</h3>
+        </div>
+      </div>
+      <div class="blog-mini-card">
+        <div class="blog-mini-img"><img src="https://images.unsplash.com/photo-1542601906897-3f87b0bb2882?w=200&auto=format&fit=crop" alt="" loading="lazy"></div>
+        <div class="blog-mini-body">
+          <span class="card-tag">Développement durable</span>
+          <h3>Écotourisme camerounais : opportunités et défis</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title reveal" style="margin-bottom:2rem">Derniers <em>articles</em></h2>
+  <div class="card-grid">
+    <article class="card">
+      <div class="card-img"><img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=600&auto=format&fit=crop" alt="Article sur la couverture médiatique" loading="lazy"></div>
+      <div class="card-body">
+        <span class="card-tag">Médias · 20 Mars 2026</span>
+        <h3>Couverture médiatique d'événements : les clés du succès</h3>
+        <p>Comment transformer un événement ordinaire en moment inoubliable grâce à une couverture médiatique stratégique.</p>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card-img"><img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=600&auto=format&fit=crop" alt="Article sur le plaidoyer" loading="lazy"></div>
+      <div class="card-body">
+        <span class="card-tag">Social · 15 Mars 2026</span>
+        <h3>Plaidoyer efficace : comment donner de la voix à vos causes</h3>
+        <p>Les stratégies de plaidoyer qui fonctionnent vraiment pour les organisations sociales et caritatives au Cameroun.</p>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card-img"><img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=600&auto=format&fit=crop" alt="Article sur la réputation en ligne" loading="lazy"></div>
+      <div class="card-body">
+        <span class="card-tag">Marketing · 10 Mars 2026</span>
+        <h3>Réputation en ligne : pourquoi c'est votre actif le plus précieux</h3>
+        <p>À l'ère du numérique, votre réputation en ligne peut faire ou défaire votre activité. Voici comment la maîtriser.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<footer role="contentinfo">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo"><span>Delices</span> Medias<div class="nav-logo-badge">Group</div></a>
+      <p>Expert en couverture médiatique, événementiel, publicité &amp; marketing au Cameroun.</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/delicesmedias&events" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://wa.me/237677685062" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="mailto:ngatchouguy24@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Navigation</h4><ul>
+      <li><a href="index.html">Accueil</a></li><li><a href="about.html">À Propos</a></li>
+      <li><a href="services.html">Services</a></li><li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Catégories</h4><ul>
+      <li><a href="#">Médias</a></li><li><a href="#">Événementiel</a></li>
+      <li><a href="#">Marketing</a></li><li><a href="#">Développement durable</a></li>
+      <li><a href="#">Social & Sociétal</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul class="footer-contact">
+      <li><i class="fa-solid fa-location-dot"></i> Yaoundé, Cameroun</li>
+      <li><i class="fa-solid fa-phone"></i> <a href="tel:+237677685062">+237 677 685 062</a></li>
+      <li><i class="fa-solid fa-envelope"></i> <a href="mailto:ngatchouguy24@gmail.com">ngatchouguy24@gmail.com</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Delices Medias Group. Tous droits réservés.</p>
+    <div class="footer-legal"><a href="privacy-policy.html">Politique de confidentialité</a><a href="terms.html">Termes et conditions</a></div>
+    <p>Créé par <a href="https://kinerty.com" target="_blank" rel="noopener">Kinerty</a></p>
+  </div>
+</footer>
+<a href="https://wa.me/237677685062" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+<button class="back-to-top" aria-label="Retour en haut"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></button>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
