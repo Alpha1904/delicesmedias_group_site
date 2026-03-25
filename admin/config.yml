@@ -1,0 +1,230 @@
+# ============================================================
+# DECAP CMS — Configuration Delices Medias Group
+# Backend : GitHub OAuth via Cloudflare Pages Functions
+# ============================================================
+
+backend:
+  name: github
+  repo: VOTRE_USERNAME/VOTRE_REPO          # ← REMPLACER : ex: kouimi/delicesmedias
+  branch: main
+  base_url: https://VOTRE_DOMAINE.com       # ← REMPLACER : ex: https://delicesmedias.com
+  auth_endpoint: /api/auth
+
+# Dossier public du site (à la racine pour ce projet statique)
+public_folder: ""
+media_folder: "assets/uploads"
+media_library:
+  max_file_size: 2000000  # 2 MB max
+
+# Interface en français
+locale: fr
+
+# Aperçu désactivé (site statique sans SSR)
+show_preview_links: false
+
+# ============================================================
+# COLLECTIONS
+# ============================================================
+collections:
+
+  # ── BLOG ───────────────────────────────────────────────────
+  - name: "blog"
+    label: "Articles de Blog"
+    label_singular: "Article"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    extension: "json"
+    format: "json"
+    identifier_field: "title"
+    summary: "{{title}} — {{date}}"
+    sortable_fields: ["date", "title", "category"]
+    view_filters:
+      - label: "Articles publiés"
+        field: "published"
+        pattern: true
+      - label: "Brouillons"
+        field: "published"
+        pattern: false
+    fields:
+      - { label: "Titre", name: "title", widget: "string", hint: "Titre accrocheur de l'article" }
+      - { label: "Date de publication", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
+      - label: "Catégorie"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Médias", value: "Médias" }
+          - { label: "Événementiel", value: "Événementiel" }
+          - { label: "Marketing", value: "Marketing" }
+          - { label: "Développement durable", value: "Développement durable" }
+          - { label: "Social & Sociétal", value: "Social" }
+          - { label: "Plaidoyer", value: "Plaidoyer" }
+          - { label: "Actualités", value: "Actualités" }
+      - { label: "Image de couverture", name: "cover_image", widget: "image", hint: "Image principale de l'article (1200×630px recommandé)", required: false }
+      - { label: "Description courte (extrait)", name: "excerpt", widget: "text", hint: "Résumé de 1-2 phrases affiché dans la liste d'articles" }
+      - { label: "Contenu complet", name: "body", widget: "markdown", hint: "Corps de l'article en Markdown" }
+      - { label: "Auteur", name: "author", widget: "string", default: "Delices Medias Group" }
+      - { label: "Tags", name: "tags", widget: "list", allow_add: true, field: { label: "Tag", name: "tag", widget: "string" }, required: false }
+      - { label: "Publié", name: "published", widget: "boolean", default: true, hint: "Décocher pour sauvegarder en brouillon" }
+      - { label: "Article à la une", name: "featured", widget: "boolean", default: false, hint: "Cocher pour afficher en premier sur la page Blog" }
+
+  # ── ÉVÉNEMENTS ─────────────────────────────────────────────
+  - name: "events"
+    label: "Événements"
+    label_singular: "Événement"
+    folder: "_events"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    extension: "json"
+    format: "json"
+    identifier_field: "title"
+    summary: "{{title}} — {{event_date}}"
+    fields:
+      - { label: "Titre de l'événement", name: "title", widget: "string" }
+      - { label: "Date de l'événement", name: "event_date", widget: "datetime", format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
+      - { label: "Heure de début", name: "start_time", widget: "string", hint: "Ex: 09h00", required: false }
+      - { label: "Heure de fin", name: "end_time", widget: "string", hint: "Ex: 17h00", required: false }
+      - label: "Type d'événement"
+        name: "event_type"
+        widget: "select"
+        options:
+          - { label: "Conférence", value: "Conférence" }
+          - { label: "Gala", value: "Gala" }
+          - { label: "Séminaire", value: "Séminaire" }
+          - { label: "Forum", value: "Forum" }
+          - { label: "Atelier", value: "Atelier" }
+          - { label: "Couverture médiatique", value: "Couverture" }
+          - { label: "Autre", value: "Autre" }
+      - { label: "Lieu", name: "location", widget: "string", hint: "Ex: Hôtel Hilton, Yaoundé" }
+      - { label: "Image de l'événement", name: "image", widget: "image", required: false }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Contenu détaillé", name: "body", widget: "markdown", required: false }
+      - label: "Statut"
+        name: "status"
+        widget: "select"
+        options:
+          - { label: "À venir", value: "upcoming" }
+          - { label: "Terminé", value: "past" }
+          - { label: "Annulé", value: "cancelled" }
+        default: "upcoming"
+      - { label: "Publié", name: "published", widget: "boolean", default: true }
+      - { label: "Lien d'inscription", name: "registration_url", widget: "string", required: false }
+
+  # ── PORTFOLIO ───────────────────────────────────────────────
+  - name: "portfolio"
+    label: "Portfolio / Galerie"
+    label_singular: "Projet"
+    folder: "_portfolio"
+    create: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    identifier_field: "title"
+    fields:
+      - { label: "Titre du projet", name: "title", widget: "string" }
+      - label: "Catégorie"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Événementiel", value: "Événementiel" }
+          - { label: "Médias", value: "Médias" }
+          - { label: "Marketing", value: "Marketing" }
+          - { label: "Plaidoyer", value: "Plaidoyer" }
+          - { label: "Développement durable", value: "Développement durable" }
+          - { label: "Production", value: "Production" }
+      - { label: "Image principale", name: "image", widget: "image" }
+      - { label: "Description courte", name: "description", widget: "text" }
+      - { label: "Client / Organisation", name: "client", widget: "string", required: false }
+      - { label: "Date du projet", name: "date", widget: "datetime", format: "YYYY-MM", date_format: "MM/YYYY", time_format: false, required: false }
+      - { label: "Publié", name: "published", widget: "boolean", default: true }
+      - { label: "Ordre d'affichage", name: "order", widget: "number", default: 99, hint: "Plus le chiffre est petit, plus le projet apparaît en premier" }
+
+  # ── TÉMOIGNAGES ─────────────────────────────────────────────
+  - name: "testimonials"
+    label: "Témoignages"
+    label_singular: "Témoignage"
+    folder: "_testimonials"
+    create: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    identifier_field: "author_name"
+    fields:
+      - { label: "Nom du client", name: "author_name", widget: "string" }
+      - { label: "Poste / Titre", name: "author_title", widget: "string", hint: "Ex: Directrice d'ONG, Yaoundé" }
+      - { label: "Pays / Ville", name: "author_location", widget: "string", required: false }
+      - label: "Note (étoiles)"
+        name: "rating"
+        widget: "select"
+        options: ["5", "4", "3"]
+        default: "5"
+      - { label: "Témoignage", name: "text", widget: "text" }
+      - { label: "Photo du client", name: "photo", widget: "image", required: false }
+      - { label: "Publié", name: "published", widget: "boolean", default: true }
+
+  # ── ÉQUIPE ──────────────────────────────────────────────────
+  - name: "team"
+    label: "Équipe"
+    label_singular: "Membre"
+    folder: "_team"
+    create: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    identifier_field: "name"
+    fields:
+      - { label: "Nom complet", name: "name", widget: "string" }
+      - { label: "Poste / Rôle", name: "role", widget: "string" }
+      - { label: "Photo", name: "photo", widget: "image", required: false }
+      - { label: "Biographie", name: "bio", widget: "text" }
+      - { label: "Email", name: "email", widget: "string", required: false }
+      - { label: "LinkedIn", name: "linkedin", widget: "string", required: false }
+      - { label: "Facebook", name: "facebook", widget: "string", required: false }
+      - { label: "Fondateur", name: "is_founder", widget: "boolean", default: false }
+      - { label: "Ordre d'affichage", name: "order", widget: "number", default: 99 }
+      - { label: "Publié", name: "published", widget: "boolean", default: true }
+
+  # ── PARTENAIRES ─────────────────────────────────────────────
+  - name: "partners"
+    label: "Partenaires"
+    label_singular: "Partenaire"
+    folder: "_partners"
+    create: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    identifier_field: "name"
+    fields:
+      - { label: "Nom de l'organisation", name: "name", widget: "string" }
+      - label: "Type de partenariat"
+        name: "type"
+        widget: "select"
+        options:
+          - { label: "Corporate", value: "Corporate" }
+          - { label: "ONG / Association", value: "ONG" }
+          - { label: "Médias", value: "Médias" }
+          - { label: "Institutionnel", value: "Institutionnel" }
+          - { label: "Social", value: "Social" }
+          - { label: "Développement", value: "Développement" }
+      - { label: "Logo", name: "logo", widget: "image", required: false }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Site web", name: "website", widget: "string", required: false }
+      - { label: "Publié", name: "published", widget: "boolean", default: true }
+
+  # ── PARAMÈTRES DU SITE ──────────────────────────────────────
+  - name: "settings"
+    label: "Paramètres du site"
+    files:
+      - label: "Informations générales"
+        name: "general"
+        file: "_data/settings.json"
+        fields:
+          - { label: "Nom de l'entreprise", name: "site_name", widget: "string", default: "Delices Medias Group" }
+          - { label: "Slogan", name: "tagline", widget: "string" }
+          - { label: "Email de contact", name: "email", widget: "string" }
+          - { label: "Téléphone principal", name: "phone_1", widget: "string" }
+          - { label: "Téléphone secondaire", name: "phone_2", widget: "string", required: false }
+          - { label: "WhatsApp", name: "whatsapp", widget: "string" }
+          - { label: "Adresse", name: "address", widget: "string" }
+          - { label: "Facebook", name: "facebook", widget: "string", required: false }
+          - { label: "Horaires", name: "hours", widget: "string", default: "Lundi – Vendredi : 8h – 18h" }

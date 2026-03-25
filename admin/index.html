@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Gestionnaire de Contenu | Delices Medias Group</title>
+  <style>
+    /* Mini loader pendant que Decap charge */
+    body { margin: 0; background: #0A1628; display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: 'Syne', sans-serif; }
+    .loader { text-align: center; color: #C9A84C; }
+    .loader h2 { font-size: 1.5rem; margin-bottom: 0.5rem; letter-spacing: 0.05em; }
+    .loader p { font-size: 0.8rem; color: #8899BB; }
+    .loader-bar { width: 200px; height: 2px; background: rgba(201,168,76,0.2); border-radius: 2px; margin: 1rem auto; overflow: hidden; }
+    .loader-bar::after { content: ''; display: block; height: 100%; background: #C9A84C; animation: load 1.5s ease-in-out infinite; }
+    @keyframes load { 0% { width: 0; margin-left: 0; } 50% { width: 100%; margin-left: 0; } 100% { width: 0; margin-left: 100%; } }
+  </style>
+</head>
+<body>
+  <div class="loader" id="loader">
+    <h2>Delices Medias Group</h2>
+    <div class="loader-bar"></div>
+    <p>Chargement du gestionnaire de contenu…</p>
+  </div>
+
+  <!-- Decap CMS -->
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+  <script>
+    // Remove loader once CMS mounts
+    document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        const loader = document.getElementById('loader');
+        if (loader) loader.style.display = 'none';
+      }, 2000);
+    });
+  </script>
+</body>
+</html>

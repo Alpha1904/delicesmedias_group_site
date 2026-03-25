@@ -50,6 +50,25 @@
     }
     .value-card p { font-size: 0.85rem; line-height: 1.7; color: var(--grey-light); }
 
+    @media (max-width: 360px) {
+      .value-card {
+        padding: 2rem;
+        gap: 1rem;
+      }
+      .value-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 1.1rem;
+      }
+      .value-card h3 {
+        font-size: 1.1rem;
+      }
+      .value-card p {
+        font-size: 0.75rem;
+      }
+    }
+
+
     .timeline {
       position: relative;
       padding-left: 3rem;
@@ -114,12 +133,23 @@
     }
     .about-img-overlay strong { display: block; font-size: 2.5rem; font-weight: 700; line-height: 1; }
     .about-img-overlay span { font-size: 0.75rem; font-weight: 400; opacity: 0.8; }
+    .timeline-ctn {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:6rem;
+      align-items:start;
+    }
 
     @media (max-width: 768px) {
       .values-grid { grid-template-columns: 1fr; }
       .about-two-col { grid-template-columns: 1fr; gap: 3rem; }
       .about-img-overlay { position: static; margin-top: 1rem; display: inline-block; }
+      .timeline-ctn {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
     }
+    
   </style>
 </head>
 <body>
@@ -245,7 +275,7 @@
 
 <!-- Timeline -->
 <section class="section-pad" aria-labelledby="timeline-heading">
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start">
+  <div class="timeline-ctn">
     <div>
       <p class="section-label" aria-hidden="true">Notre parcours</p>
       <h2 class="section-title reveal" id="timeline-heading" style="margin-bottom:3rem">

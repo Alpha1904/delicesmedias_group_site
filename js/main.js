@@ -253,7 +253,7 @@
     });
   }, { threshold: 0.05 });
 
-  document.querySelectorAll('.bento-grid .bento-card, .card-grid .card').forEach(el => {
+  document.querySelectorAll('.bento-grid .bento-card, .card-grid .card, .card-grid .testimonial-card').forEach(el => {
     observer.observe(el);
   });
 })();
