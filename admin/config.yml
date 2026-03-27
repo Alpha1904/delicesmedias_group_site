@@ -4,11 +4,11 @@
 # ============================================================
 
 backend:
-  name: github
-  repo: VOTRE_USERNAME/VOTRE_REPO          # ← REMPLACER : ex: kouimi/delicesmedias
+  name: git-gateway 
+  #repo: VOTRE_USERNAME/VOTRE_REPO          # ← REMPLACER : ex: kouimi/delicesmedias
   branch: main
-  base_url: https://VOTRE_DOMAINE.com       # ← REMPLACER : ex: https://delicesmedias.com
-  auth_endpoint: /api/auth
+ # base_url: https://VOTRE_DOMAINE.com       # ← REMPLACER : ex: https://delicesmedias.com
+ # auth_endpoint: /api/auth
 
 # Dossier public du site (à la racine pour ce projet statique)
 public_folder: ""
