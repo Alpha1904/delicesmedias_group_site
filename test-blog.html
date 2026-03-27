@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Blog Modal</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 2rem; background: #0a1628; color: white; }
+    .card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 1rem; margin: 1rem; cursor: pointer; border-radius: 8px; }
+    .card:hover { border-color: rgba(201,168,76,0.4); }
+  </style>
+</head>
+<body>
+  <h1>Test Blog Modal Functionality</h1>
+  <p>Click on the cards below to test article modal:</p>
+  
+  <div class="card" onclick="openArticle('test-article')">
+    <h3>Test Article</h3>
+    <p>Click to open modal</p>
+  </div>
+
+  <script>
+    // Mock data for testing
+    window.allPosts = [
+      {
+        _slug: 'test-article',
+        title: 'Article Test',
+        date: '2026-03-24',
+        category: 'Test',
+        author: 'Test Author',
+        body: '## Test Content\n\nThis is a test article to verify the modal functionality works correctly.\n\n### Features tested:\n\n- Modal opening\n- Content rendering\n- Markdown parsing\n- Close functionality'
+      }
+    ];
+
+    // Copy the modal functions from blog-loader.js
+    window.openArticle = function(slug) {
+      const post = allPosts.find(p => p._slug === slug);
+      if (!post) return;
+
+      const modal = document.createElement('div');
+      modal.id = 'article-modal';
+      modal.setAttribute('role', 'dialog');
+      modal.setAttribute('aria-modal', 'true');
+      modal.setAttribute('aria-label', post.title);
+      modal.style.cssText = `
+        position:fixed;inset:0;z-index:9000;
+        background:rgba(10,22,40,0.97);
+        backdrop-filter:blur(20px);
+        overflow-y:auto;
+        animation:fadeIn 0.3s ease;
+      `;
+
+      modal.innerHTML = `
+        <div style="max-width:760px;margin:0 auto;padding:6rem 2rem 4rem">
+          <button onclick="closeArticle()" aria-label="Fermer l'article"
+                  style="position:fixed;top:1.5rem;right:1.5rem;
+                         background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.1);
+                         color:white;border-radius:50%;width:44px;height:44px;
+                         display:flex;align-items:center;justify-content:center;
+                         cursor:pointer;font-size:1rem;transition:all 0.3s;z-index:1">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          </button>
+
+          <div style="margin-bottom:2rem">
+            <span style="display:inline-block;margin-bottom:1rem;color:rgba(201,168,76,1)">
+              ${post.category || 'Actualités'} · ${new Date(post.date).toLocaleDateString('fr-FR')}
+            </span>
+            <h1 style="font-size:clamp(2rem,4vw,3rem);font-weight:300;line-height:1.1;margin-bottom:1rem">
+              ${post.title}
+            </h1>
+            <div style="display:flex;align-items:center;gap:1rem">
+              <span style="font-size:0.65rem;color:rgba(255,255,255,0.6)">
+                <i class="fa-solid fa-user" style="color:rgba(201,168,76,1);margin-right:0.4rem"></i>
+                ${post.author || 'Delices Medias Group'}
+              </span>
+            </div>
+          </div>
+
+          <div style="font-size:1rem;line-height:1.9;color:rgba(255,255,255,0.9)" class="article-body">
+            ${post.body.replace(/### (.+)/g, '<h3>$1</h3>').replace(/## (.+)/g, '<h2>$1</h2>').replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\n\n/g, '</p><p>').replace(/^(?!<[hup])/gm, '<p>')}
+          </div>
+
+          <div style="margin-top:4rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.1);
+                      display:flex;gap:1rem;flex-wrap:wrap">
+            <button onclick="closeArticle()" style="background:rgba(201,168,76,1);color:white;border:none;padding:0.5rem 1rem;border-radius:4px;cursor:pointer;font-size:0.75rem">
+              <i class="fa-solid fa-arrow-left"></i> Retour aux articles
+            </button>
+          </div>
+        </div>`;
+
+      document.body.appendChild(modal);
+      document.body.style.overflow = 'hidden';
+
+      // Keyboard close
+      modal._keyHandler = e => { if (e.key === 'Escape') closeArticle(); };
+      document.addEventListener('keydown', modal._keyHandler);
+    };
+
+    window.closeArticle = function() {
+      const modal = document.getElementById('article-modal');
+      if (modal) {
+        document.removeEventListener('keydown', modal._keyHandler);
+        modal.style.animation = 'fadeOut 0.2s ease forwards';
+        setTimeout(() => { modal.remove(); document.body.style.overflow = ''; }, 200);
+      }
+    };
+  </script>
+</body>
+</html>

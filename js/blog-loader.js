@@ -9,7 +9,7 @@
  * pour pointer vers le vrai dépôt GitHub.
  */
 
-const GITHUB_REPO  = 'VOTRE_USERNAME/VOTRE_REPO'; // ← REMPLACER
+const GITHUB_REPO  = 'Alpha1904/delicesmedias_group_site'; // ← REMPLACER
 const GITHUB_BRANCH = 'main';
 const POSTS_DIR    = '_posts';
 const BASE_URL     = `https://api.github.com/repos/${GITHUB_REPO}/contents/${POSTS_DIR}?ref=${GITHUB_BRANCH}`;
