@@ -13,9 +13,7 @@ backend:
 # Dossier public du site (à la racine pour ce projet statique)
 public_folder: ""
 media_folder: "assets/uploads"
-media_library:
-  name: "uploads"
-  max_file_size: 2000000  # 2 MB max
+# media_library:
 
 # Interface en français
 locale: fr
